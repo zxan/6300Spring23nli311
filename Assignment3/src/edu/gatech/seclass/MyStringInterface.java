@@ -9,6 +9,7 @@ package edu.gatech.seclass;
  * This interface should NOT be altered in any way.
  */
 public interface MyStringInterface {
+
     /**
      * Returns the current string.
      * If the string has not been initialized with method setString, it should return null.
