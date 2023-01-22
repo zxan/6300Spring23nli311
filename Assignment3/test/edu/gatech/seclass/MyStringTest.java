@@ -71,7 +71,7 @@ public class MyStringTest {
 
     @Test
     @Timeout(value = 5000, unit = TimeUnit.MILLISECONDS)
-    // Description: <Add test description here>
+    // Description: Testing Easteregg input and should expect Illegal Argument
     public void testSetString1() {
         assertThrows(IllegalArgumentException.class, () -> {
             mystring.setString("Copyright GA Tech. All rights reserved.");
