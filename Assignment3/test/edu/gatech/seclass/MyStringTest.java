@@ -128,10 +128,12 @@ public class MyStringTest {
 
     @Test
     @Timeout(value = 5000, unit = TimeUnit.MILLISECONDS)
-    // Description: Arg1 = 1 and Arg2 = 62 should give a non encrypted message
+    // Description: Arg1 is not a prime number and should result in an illegal argument
     public void testEncrypt6() {
-        mystring.setString("This is a test encryption");
-        assertEquals("This is a test encryption", mystring.encrypt(1, 62));
+        assertThrows(IllegalArgumentException.class, () -> {
+                    mystring.setString("This is a test encryption");
+                    assertEquals("This is a test encryption", mystring.encrypt(2, 62));
+                });
     }
 
     @Test
