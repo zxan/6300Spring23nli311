@@ -55,46 +55,44 @@ public class MyString implements MyStringInterface{
                 int char_enc = 0;
                 String f = "";
                 f = String.valueOf(myString.charAt(c));
-                if (Character.isLetter(myString.charAt(c)) || f.matches(".*[1234567890].*")) {
-                    if (Character.isUpperCase(myString.charAt(c))){
-                        char_num = (int) myString.charAt(c) - 39;
-                        char_enc = ((char_num * arg1) + arg2) % 62;
-                        if (char_enc <= 25){
-                            char_enc += 97;
-                            encrypted += (char)char_enc;
-                        } else if (char_enc <= 51) {
-                            char_enc += 39;
-                            encrypted += (char)char_enc;
-                        } else{
-                            char_enc -= 39;
-                            encrypted += (char)char_enc;
-                        }
-                    } else if (Character.isLowerCase(myString.charAt(c))) {
-                        char_num = (int) myString.charAt(c) - 97;
-                        char_enc = ((char_num * arg1) + arg2) % 62;
-                        if (char_enc <= 25){
-                            char_enc += 97;
-                            encrypted += (char)char_enc;
-                        } else if (char_enc <= 51) {
-                            char_enc += 39;
-                            encrypted += (char)char_enc;
-                        } else{
-                            char_enc -= 39;
-                            encrypted += (char)char_enc;
-                        }
-                    } else if (f.matches(".*[1234567890].*")) {
-                        char_num = (int) myString.charAt(c) + 4;
-                        char_enc = ((char_num * arg1) + arg2) % 62;
-                        if (char_enc <= 25){
-                            char_enc += 97;
-                            encrypted += (char)char_enc;
-                        } else if (char_enc <= 51) {
-                            char_enc += 39;
-                            encrypted += (char)char_enc;
-                        } else{
-                            char_enc -= 39;
-                            encrypted += (char)char_enc;
-                        }
+                if (f.matches(".*[ABCDEFGHIJKLMNOPQRSTUVWXYZ].*")){
+                    char_num = (int) myString.charAt(c) - 39;
+                    char_enc = ((char_num * arg1) + arg2) % 62;
+                    if (char_enc <= 25){
+                        char_enc += 97;
+                        encrypted += (char)char_enc;
+                    } else if (char_enc <= 51) {
+                        char_enc += 39;
+                        encrypted += (char)char_enc;
+                    } else{
+                        char_enc -= 39;
+                        encrypted += (char)char_enc;
+                    }
+                } else if (f.matches(".*[abcdefghijklmnopqrstuvwxyz].*")) {
+                    char_num = (int) myString.charAt(c) - 97;
+                    char_enc = ((char_num * arg1) + arg2) % 62;
+                    if (char_enc <= 25){
+                        char_enc += 97;
+                        encrypted += (char)char_enc;
+                    } else if (char_enc <= 51) {
+                        char_enc += 39;
+                        encrypted += (char)char_enc;
+                    } else{
+                        char_enc -= 39;
+                        encrypted += (char)char_enc;
+                    }
+                } else if (f.matches(".*[1234567890].*")) {
+                    char_num = (int) myString.charAt(c) + 4;
+                    char_enc = ((char_num * arg1) + arg2) % 62;
+                    if (char_enc <= 25){
+                        char_enc += 97;
+                        encrypted += (char)char_enc;
+                    } else if (char_enc <= 51) {
+                        char_enc += 39;
+                        encrypted += (char)char_enc;
+                    } else{
+                        char_enc -= 39;
+                        encrypted += (char)char_enc;
                     }
                 }
                 else{

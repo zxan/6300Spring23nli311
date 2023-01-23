@@ -108,11 +108,11 @@ public class MyStringTest {
 
     @Test
     @Timeout(value = 5000, unit = TimeUnit.MILLISECONDS)
-    // Description: Testing if arg2 is above 62 number
+    // Description: Testing if unicode letters are rejected
     public void testEncrypt4() {
         assertThrows(IllegalArgumentException.class, () -> {
-            mystring.setString("Arg2 is 64");
-            mystring.encrypt(1,64);
+            mystring.setString("Cât & 5 DogS");
+            mystring.encrypt(34,23);
         });
     }
 
