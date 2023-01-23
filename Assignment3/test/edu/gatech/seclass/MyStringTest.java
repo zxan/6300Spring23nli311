@@ -98,11 +98,11 @@ public class MyStringTest {
 
     @Test
     @Timeout(value = 5000, unit = TimeUnit.MILLISECONDS)
-    // Description: Testing if arg1 is a negative number
+    // Description: Testing if unicode numbers are rejected
     public void testEncrypt3() {
         assertThrows(IllegalArgumentException.class, () -> {
-            mystring.setString("Arg1 is negative");
-            mystring.encrypt(-1,2);
+            mystring.setString("۹ is a unicode number");
+            mystring.encrypt(34,2);
         });
     }
 

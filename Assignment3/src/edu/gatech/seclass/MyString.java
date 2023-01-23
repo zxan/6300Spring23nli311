@@ -53,7 +53,9 @@ public class MyString implements MyStringInterface{
             for (int c = 0; c < myString.length(); c++) {
                 int char_num = 0;
                 int char_enc = 0;
-                if (Character.isLetter(myString.charAt(c)) || Character.isDigit(myString.charAt(c))) {
+                String f = "";
+                f = String.valueOf(myString.charAt(c));
+                if (Character.isLetter(myString.charAt(c)) || f.matches(".*[1234567890].*")) {
                     if (Character.isUpperCase(myString.charAt(c))){
                         char_num = (int) myString.charAt(c) - 39;
                         char_enc = ((char_num * arg1) + arg2) % 62;
@@ -80,7 +82,7 @@ public class MyString implements MyStringInterface{
                             char_enc -= 39;
                             encrypted += (char)char_enc;
                         }
-                    } else if (Character.isDigit(myString.charAt(c))) {
+                    } else if (f.matches(".*[1234567890].*")) {
                         char_num = (int) myString.charAt(c) + 4;
                         char_enc = ((char_num * arg1) + arg2) % 62;
                         if (char_enc <= 25){
