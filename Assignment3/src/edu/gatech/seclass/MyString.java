@@ -43,6 +43,7 @@ public class MyString implements MyStringInterface{
 
     @Override
     public String encrypt(int arg1, int arg2) {
+        /*
         String encrypted = "";
         if (myString == null) {
             throw new NullPointerException();
@@ -101,6 +102,14 @@ public class MyString implements MyStringInterface{
             }
             return encrypted;
         }
+        */
+        String result = "";
+        result += myString;
+        result += " ";
+        result += arg1;
+        result += " ";
+        result += arg2;
+        return result;
     }
 
     @Override
