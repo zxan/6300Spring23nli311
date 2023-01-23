@@ -98,22 +98,18 @@ public class MyStringTest {
 
     @Test
     @Timeout(value = 5000, unit = TimeUnit.MILLISECONDS)
-    // Description: Testing if unicode numbers are rejected
+    // Description: Testing if unicode numbers are accepted
     public void testEncrypt3() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            mystring.setString("۹ is a unicode number");
-            mystring.encrypt(34,2);
-        });
+        mystring.setString("۹ is a unicode number");
+        assertEquals("۹ EI c kbEOu\u0014q bkSvqp", mystring.encrypt(19,2));
     }
 
     @Test
     @Timeout(value = 5000, unit = TimeUnit.MILLISECONDS)
-    // Description: Testing if unicode letters are rejected
+    // Description: Testing if unicode letters are accepted
     public void testEncrypt4() {
-        assertThrows(IllegalArgumentException.class, () -> {
-            mystring.setString("Cât & 5 DogS");
-            mystring.encrypt(34,23);
-        });
+        mystring.setString("Cât & 5 DogS");
+        assertEquals("bâA & k mHh\u000E", mystring.encrypt(11, 3));
     }
 
     @Test
