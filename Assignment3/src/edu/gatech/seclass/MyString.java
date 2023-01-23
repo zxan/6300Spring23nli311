@@ -46,7 +46,7 @@ public class MyString implements MyStringInterface{
         String encrypted = "";
         if (myString == null) {
             throw new NullPointerException();
-        } else if ((arg1 != 1 && arg1 != 3 && arg1 != 5 && arg1 != 7 && arg1 != 11 && arg1 != 13 && arg1 != 17 && arg1 != 19 && arg1 != 23 && arg1 != 29 && arg1 != 31 && arg1 != 37 && arg1 != 41 && arg1 != 43 && arg1 != 47 && arg1 != 53 && arg1 != 59 && arg1 != 61)
+        } else if ((arg1 % 2 == 0) || arg1 >= 62 || arg1 <= 0 || arg1 == 31
                 || arg2 >= 62 || arg2 <= 0) {
             throw new IllegalArgumentException();
         } else {

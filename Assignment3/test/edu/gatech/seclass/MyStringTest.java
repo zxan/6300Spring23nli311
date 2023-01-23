@@ -65,7 +65,7 @@ public class MyStringTest {
     @Timeout(value = 5000, unit = TimeUnit.MILLISECONDS)
     // Description: Testing if non-alpha numeric characters are counted as spaces
     public void testCountAlphabeticWords4() {
-        mystring.setString("i#love 2 pr00gram.");
+        mystring.setString("Th1S_!$@T3sT");
         assertEquals(4, mystring.countAlphabeticWords());
     }
 
