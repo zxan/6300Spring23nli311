@@ -46,10 +46,8 @@ public class MyString implements MyStringInterface{
         String encrypted = "";
         if (myString == null) {
             throw new NullPointerException();
-        } else if (arg1 > 62 || arg1 < 0 || arg2 > 62 || arg2 < 0) {
+        } else if ((arg1 >= 63 || arg1 <= -1 || arg2 >= 63 || arg2 <= 0) && myString != null) {
             throw new IllegalArgumentException();
-        } else if (myString == null) {
-            throw new NullPointerException();
         } else {
             for (int c = 0; c < myString.length(); c++) {
                 int char_num = 0;

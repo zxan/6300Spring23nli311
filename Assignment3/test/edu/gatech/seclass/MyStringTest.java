@@ -118,10 +118,12 @@ public class MyStringTest {
 
     @Test
     @Timeout(value = 5000, unit = TimeUnit.MILLISECONDS)
-    // Description: Arg1 and Arg2 are tested as zero. Should except all 'a's
+    // Description: Arg2 is zero. Should throw IllegalArgumentException
     public void testEncrypt5() {
-        mystring.setString("This is a test encryption where both args are 0");
-        assertEquals("aaaa aa a aaaa aaaaaaaaaa aaaaa aaaa aaaa aaa a", mystring.encrypt(0, 0));
+        assertThrows(IllegalArgumentException.class, () -> {
+            mystring.setString("Arg2 is zero");
+            mystring.encrypt(0,0);
+        });
     }
 
     @Test
