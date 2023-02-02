@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         argInput2 = (EditText) findViewById(R.id.argInput2ID);
         textEncrypted = (EditText) findViewById(R.id.textEncryptedID);
         encryptButton = (Button) findViewById(R.id.encryptButtonID);
+        argInput1.setText("1");
+        argInput2.setText("1");
     }
 
     public void handleClick(View view) {
