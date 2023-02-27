@@ -4,8 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,10 +19,16 @@ public class MainActivity extends AppCompatActivity {
     private EditText argInput2;
     private EditText textEncrypted;
     private Button encryptButton;
+    Button btn_viewAll;
+    ListView lv_text;
 
     public String myString;
+    public String result;
     public int arg1;
     public int arg2;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +42,20 @@ public class MainActivity extends AppCompatActivity {
         encryptButton = (Button) findViewById(R.id.encryptButtonID);
         argInput1.setText("1");
         argInput2.setText("1");
+        btn_viewAll = findViewById(R.id.btn_viewAll);
+        lv_text = findViewById(R.id.lv_text);
+
+        btn_viewAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DataBaseHelper dataBaseHelper = new DataBaseHelper(MainActivity.this);
+                List<SdpModel> everyone = dataBaseHelper.getEveryone();
+                //Toast.makeText(MainActivity.this, everyone.toString(), Toast.LENGTH_SHORT).show();
+
+                ArrayAdapter encryptArrayAdapter = new ArrayAdapter<SdpModel>(MainActivity.this, android.R.layout.simple_list_item_1, everyone);
+                lv_text.setAdapter(encryptArrayAdapter);
+            }
+        });
     }
 
     public void handleClick(View view) {
@@ -70,9 +95,17 @@ public class MainActivity extends AppCompatActivity {
                 textEncrypted.setText(result);
             }
 
+            SdpModel sdpmodel = new SdpModel(myString, arg1, arg2, textEncrypted.getText().toString());
+
+            DataBaseHelper databaseHelper = new DataBaseHelper(MainActivity.this);
+            //Toast.makeText(MainActivity.this, sdpmodel.toString(), Toast.LENGTH_SHORT).show();
+
+            boolean success = databaseHelper.addOne(sdpmodel);
+            Toast.makeText(MainActivity.this, "Success = " + success, Toast.LENGTH_SHORT).show();
 
         }
     }
+
 
     public String encrypt(int arg1, int arg2) {
         String encrypted = "";
