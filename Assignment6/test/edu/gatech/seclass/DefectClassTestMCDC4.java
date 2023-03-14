@@ -1,7 +1,9 @@
-import static org.junit.Assert.*;
+package edu.gatech.seclass;
 
 import edu.gatech.seclass.DefectClass;
 import org.junit.Test;
+import static org.junit.Assert.*;
+
 
 public class DefectClassTestMCDC4 {
     DefectClass dc = new DefectClass();

@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="899c61cb-d7f5-496c-b650-4692443855b3" name="Changes" comment="" />
+    <list default="true" id="899c61cb-d7f5-496c-b650-4692443855b3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Assignment6/DefectClassTestBC1a.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Assignment6/DefectClassTestBC1b.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Assignment6/DefectClassTestBC3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Assignment6/DefectClassTestMCDC4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Assignment6/DefectClassTestSC3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Assignment6/DefectClassTestSC4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/DefectClassTestBC1a.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/edu/gatech/seclass/DefectClassTestBC1a.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/DefectClassTestBC1b.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/edu/gatech/seclass/DefectClassTestBC1b.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/DefectClassTestBC3.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/edu/gatech/seclass/DefectClassTestBC3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/DefectClassTestMCDC4.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/edu/gatech/seclass/DefectClassTestMCDC4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/DefectClassTestSC3.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/edu/gatech/seclass/DefectClassTestSC3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/DefectClassTestSC4.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/edu/gatech/seclass/DefectClassTestSC4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/ExampleTestSC1.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,14 +55,15 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="edu.gatech.seclass" />
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DefectClassTestBC3">
+  <component name="RunManager">
     <configuration name="DefectClassTestBC3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment6" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DefectClassTestBC3" />
+      <option name="PACKAGE_NAME" value="edu.gatech.seclass" />
+      <option name="MAIN_CLASS_NAME" value="edu.gatech.seclass.DefectClassTestBC3" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -54,8 +71,8 @@
     </configuration>
     <configuration name="DefectClassTestMCDC4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment6" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DefectClassTestMCDC4" />
+      <option name="PACKAGE_NAME" value="edu.gatech.seclass" />
+      <option name="MAIN_CLASS_NAME" value="edu.gatech.seclass.DefectClassTestMCDC4" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -63,8 +80,8 @@
     </configuration>
     <configuration name="DefectClassTestMCDC4.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment6" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DefectClassTestMCDC4" />
+      <option name="PACKAGE_NAME" value="edu.gatech.seclass" />
+      <option name="MAIN_CLASS_NAME" value="edu.gatech.seclass.DefectClassTestMCDC4" />
       <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -73,8 +90,8 @@
     </configuration>
     <configuration name="DefectClassTestSC3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment6" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DefectClassTestSC3" />
+      <option name="PACKAGE_NAME" value="edu.gatech.seclass" />
+      <option name="MAIN_CLASS_NAME" value="edu.gatech.seclass.DefectClassTestSC3" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -82,8 +99,8 @@
     </configuration>
     <configuration name="DefectClassTestSC4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Assignment6" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="DefectClassTestSC4" />
+      <option name="PACKAGE_NAME" value="edu.gatech.seclass" />
+      <option name="MAIN_CLASS_NAME" value="edu.gatech.seclass.DefectClassTestSC4" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
