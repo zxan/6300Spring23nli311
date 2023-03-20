@@ -102,20 +102,20 @@ public class DefectClass {
         //
         //         | a | b |output|
         //         ================
-        a[0] =  /* | T | T | <T, F, or E> (e.g., "T") */ "E";
-        a[1] =  /* | T | F | <T, F, or E> (e.g., "T") */ "T";
-        a[2] =  /* | F | T | <T, F, or E> (e.g., "T") */ "E";
-        a[3] =  /* | F | F | <T, F, or E> (e.g., "T") */ "E";
+        a[0] =  /* | T | T | <T, F, or E> (e.g., "T") */ "T";
+        a[1] =  /* | T | F | <T, F, or E> (e.g., "T") */ "E";
+        a[2] =  /* | F | T | <T, F, or E> (e.g., "T") */ "F";
+        a[3] =  /* | F | F | <T, F, or E> (e.g., "T") */ "F";
         // ================
         //
         // Replace the "?" in the following sentences with "NEVER",
         // "SOMETIMES" or "ALWAYS":
         //
-        a[4] = /* Test suites with 100% path coverage */ "SOMETIMES";
+        a[4] = /* Test suites with 100% path coverage */ "ALWAYS";
                /*reveal the fault in this method.*/
         a[5] = /* Test suites with 100% branch coverage */ "SOMETIMES";
                /*reveal the fault in this method.*/
-        a[6] =  /* Test suites with 100% statement coverage */ "NEVER";
+        a[6] =  /* Test suites with 100% statement coverage */ "SOMETIMES";
                 /*reveal the fault in this method.*/
         // ================
         return a;
