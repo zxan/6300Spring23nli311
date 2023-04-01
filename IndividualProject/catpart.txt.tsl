@@ -1,0 +1,1180 @@
+
+Test Case 1  		<single>
+   File :  Empty file
+
+
+Test Case 2  		<error>  (follows [if])
+   FileProperties :  newline not set
+
+
+Test Case 3  		<error>  (follows [if])
+   Option1 :  both -x and -s selected
+
+
+Test Case 4  		<single>  (follows [if])
+   -x occurrenced once :  False
+
+
+Test Case 5  		<single>  (follows [if])
+   -s occurrenced once :  False
+
+
+Test Case 6  		<error>  (follows [else])
+   NumberOf-xLastParameters :  1
+
+
+Test Case 7  		<error>  (follows [else])
+   NumberOf-sLastParameters :  1
+
+
+Test Case 8  		<error>  (follows [else])
+   Option1-sParametersType :  Number
+
+
+Test Case 9  		<error>
+   Option1-sParameters :  -s_invalid
+
+
+Test Case 10 		<single>  (follows [if])
+   Option1-xCheckifEmptyString :  Empty String = remove all lines
+
+
+Test Case 11 		<single>  (follows [if])
+   -c occurrenced once :  False
+
+
+Test Case 12 		<error>  (follows [else])
+   NumberOfOption2-cParameters :  1
+
+
+Test Case 13 		<error>
+   Option2Parameters :  -c_invalid
+
+
+Test Case 14 		<error>  (follows [if])
+   Option3 :  both -e and -a selected
+
+
+Test Case 15 		<single>  (follows [if])
+   -e occurrenced once :  False
+
+
+Test Case 16 		<single>  (follows [if])
+   -a occurrenced once :  False
+
+
+Test Case 17 		<error>  (follows [else])
+   NumberOfOption3-eParameters :  1
+
+
+Test Case 18 		<single>  (follows [if])
+   NumberOfOption3-aParameters :  0
+
+
+Test Case 19 		<error>  (follows [if])
+   NumberOfOption3-aParameters :  Not 0
+
+
+Test Case 20 		<error>  (follows [if])
+   Option3-eParametersType :  Cannot be cast to integer
+
+
+Test Case 21 		<error>  (follows [else])
+   Option3-eParameters :  inclusive range of ﹣󠀭25 to 25
+
+
+Test Case 22 		<single>  (follows [if])
+   -p occurrenced once :  False
+
+
+Test Case 23 		<error>  (follows [else])
+   NumberOfOption4-pParameters :  1
+
+
+Test Case 24 		<error>  (follows [if])
+   is -p parameter string :  Not String
+
+
+Test Case 25 		<error>  (follows [if])
+   is -p parameter empty string :  Empty
+
+
+Test Case 26 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.1.1.0.1.0.1.1.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -x
+   -x occurrenced once          :  True
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  1
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  String
+   Option1-xCheckifEmptyString  :  String not empty
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -e
+   -e occurrenced once          :  True
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  1
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  Can be cast to integer
+   Option3-eParameters          :  inclusive range of ﹣󠀭25 to 25
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 27 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.1.1.0.1.0.1.1.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -x
+   -x occurrenced once          :  True
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  1
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  String
+   Option1-xCheckifEmptyString  :  String not empty
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -e
+   -e occurrenced once          :  True
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  1
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  Can be cast to integer
+   Option3-eParameters          :  inclusive range of ﹣󠀭25 to 25
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 28 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.2.0.1.0.0.0.0.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -x
+   -x occurrenced once          :  True
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  1
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  String
+   Option1-xCheckifEmptyString  :  String not empty
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -a
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  True
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 29 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.2.0.1.0.0.0.0.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -x
+   -x occurrenced once          :  True
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  1
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  String
+   Option1-xCheckifEmptyString  :  String not empty
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -a
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  True
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 30 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.3.0.0.0.0.0.0.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -x
+   -x occurrenced once          :  True
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  1
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  String
+   Option1-xCheckifEmptyString  :  String not empty
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -None
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 31 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.3.0.0.0.0.0.0.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -x
+   -x occurrenced once          :  True
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  1
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  String
+   Option1-xCheckifEmptyString  :  String not empty
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -None
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 32 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.1.1.0.1.0.1.1.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -x
+   -x occurrenced once          :  True
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  1
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  String
+   Option1-xCheckifEmptyString  :  String not empty
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -e
+   -e occurrenced once          :  True
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  1
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  Can be cast to integer
+   Option3-eParameters          :  inclusive range of ﹣󠀭25 to 25
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 33 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.1.1.0.1.0.1.1.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -x
+   -x occurrenced once          :  True
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  1
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  String
+   Option1-xCheckifEmptyString  :  String not empty
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -e
+   -e occurrenced once          :  True
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  1
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  Can be cast to integer
+   Option3-eParameters          :  inclusive range of ﹣󠀭25 to 25
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 34 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.2.0.1.0.0.0.0.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -x
+   -x occurrenced once          :  True
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  1
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  String
+   Option1-xCheckifEmptyString  :  String not empty
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -a
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  True
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 35 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.2.0.1.0.0.0.0.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -x
+   -x occurrenced once          :  True
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  1
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  String
+   Option1-xCheckifEmptyString  :  String not empty
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -a
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  True
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 36 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.3.0.0.0.0.0.0.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -x
+   -x occurrenced once          :  True
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  1
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  String
+   Option1-xCheckifEmptyString  :  String not empty
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -None
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 37 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.3.0.0.0.0.0.0.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -x
+   -x occurrenced once          :  True
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  1
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  String
+   Option1-xCheckifEmptyString  :  String not empty
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -None
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 38 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.1.1.0.1.0.1.1.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -s
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  True
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  1
+   Option1-sParametersType      :  Number
+   Option1-sParameters          :  -s_valid
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -e
+   -e occurrenced once          :  True
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  1
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  Can be cast to integer
+   Option3-eParameters          :  inclusive range of ﹣󠀭25 to 25
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 39 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.1.1.0.1.0.1.1.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -s
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  True
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  1
+   Option1-sParametersType      :  Number
+   Option1-sParameters          :  -s_valid
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -e
+   -e occurrenced once          :  True
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  1
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  Can be cast to integer
+   Option3-eParameters          :  inclusive range of ﹣󠀭25 to 25
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 40 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.2.0.1.0.0.0.0.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -s
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  True
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  1
+   Option1-sParametersType      :  Number
+   Option1-sParameters          :  -s_valid
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -a
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  True
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 41 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.2.0.1.0.0.0.0.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -s
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  True
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  1
+   Option1-sParametersType      :  Number
+   Option1-sParameters          :  -s_valid
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -a
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  True
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 42 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.3.0.0.0.0.0.0.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -s
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  True
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  1
+   Option1-sParametersType      :  Number
+   Option1-sParameters          :  -s_valid
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -None
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 43 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.3.0.0.0.0.0.0.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -s
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  True
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  1
+   Option1-sParametersType      :  Number
+   Option1-sParameters          :  -s_valid
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -None
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 44 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.1.1.0.1.0.1.1.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -s
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  True
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  1
+   Option1-sParametersType      :  Number
+   Option1-sParameters          :  -s_valid
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -e
+   -e occurrenced once          :  True
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  1
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  Can be cast to integer
+   Option3-eParameters          :  inclusive range of ﹣󠀭25 to 25
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 45 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.1.1.0.1.0.1.1.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -s
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  True
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  1
+   Option1-sParametersType      :  Number
+   Option1-sParameters          :  -s_valid
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -e
+   -e occurrenced once          :  True
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  1
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  Can be cast to integer
+   Option3-eParameters          :  inclusive range of ﹣󠀭25 to 25
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 46 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.2.0.1.0.0.0.0.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -s
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  True
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  1
+   Option1-sParametersType      :  Number
+   Option1-sParameters          :  -s_valid
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -a
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  True
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 47 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.2.0.1.0.0.0.0.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -s
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  True
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  1
+   Option1-sParametersType      :  Number
+   Option1-sParameters          :  -s_valid
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -a
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  True
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 48 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.3.0.0.0.0.0.0.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -s
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  True
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  1
+   Option1-sParametersType      :  Number
+   Option1-sParameters          :  -s_valid
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -None
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 49 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.3.0.0.0.0.0.0.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  -s
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  True
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  1
+   Option1-sParametersType      :  Number
+   Option1-sParameters          :  -s_valid
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -None
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 50 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.1.1.0.1.0.1.1.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  None
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -e
+   -e occurrenced once          :  True
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  1
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  Can be cast to integer
+   Option3-eParameters          :  inclusive range of ﹣󠀭25 to 25
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 51 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.1.1.0.1.0.1.1.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  None
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -e
+   -e occurrenced once          :  True
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  1
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  Can be cast to integer
+   Option3-eParameters          :  inclusive range of ﹣󠀭25 to 25
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 52 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.2.0.1.0.0.0.0.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  None
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -a
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  True
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 53 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.2.0.1.0.0.0.0.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  None
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -a
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  True
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 54 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.3.0.0.0.0.0.0.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  None
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -None
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 55 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.3.0.0.0.0.0.0.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  None
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -c
+   -c occurrenced once          :  True
+   NumberOfOption2-cParameters  :  1
+   Option2Parameters            :  -c_valid
+   Option3                      :  -None
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 56 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.1.1.0.1.0.1.1.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  None
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -e
+   -e occurrenced once          :  True
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  1
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  Can be cast to integer
+   Option3-eParameters          :  inclusive range of ﹣󠀭25 to 25
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 57 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.1.1.0.1.0.1.1.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  None
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -e
+   -e occurrenced once          :  True
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  1
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  Can be cast to integer
+   Option3-eParameters          :  inclusive range of ﹣󠀭25 to 25
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 58 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.2.0.1.0.0.0.0.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  None
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -a
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  True
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 59 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.2.0.1.0.0.0.0.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  None
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -a
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  True
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+
+
+Test Case 60 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.3.0.0.0.0.0.0.1.1.1.1.2.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  None
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -None
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -p
+   -p occurrenced once          :  True
+   NumberOfOption4-pParameters  :  1
+   is -p parameter string       :  String
+   is -p parameter empty string :  Not Empty
+
+
+Test Case 61 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.3.0.0.0.0.0.0.2.0.0.0.0.)
+   File                         :  File found
+   FileProperties               :  last line terminated by newline
+   Option1                      :  None
+   -x occurrenced once          :  <n/a>
+   -s occurrenced once          :  <n/a>
+   NumberOf-xLastParameters     :  <n/a>
+   NumberOf-sLastParameters     :  <n/a>
+   Option1-sParametersType      :  <n/a>
+   Option1-sParameters          :  <n/a>
+   Option1-xParametersType      :  <n/a>
+   Option1-xCheckifEmptyString  :  <n/a>
+   Option2                      :  -None
+   -c occurrenced once          :  <n/a>
+   NumberOfOption2-cParameters  :  <n/a>
+   Option2Parameters            :  <n/a>
+   Option3                      :  -None
+   -e occurrenced once          :  <n/a>
+   -a occurrenced once          :  <n/a>
+   NumberOfOption3-eParameters  :  <n/a>
+   NumberOfOption3-aParameters  :  <n/a>
+   Option3-eParametersType      :  <n/a>
+   Option3-eParameters          :  <n/a>
+   Option4                      :  -None
+   -p occurrenced once          :  <n/a>
+   NumberOfOption4-pParameters  :  <n/a>
+   is -p parameter string       :  <n/a>
+   is -p parameter empty string :  <n/a>
+

@@ -1,0 +1,85 @@
+# File
+File:
+  File found.                       [property Success]
+  Empty file.                       [single][property empty]
+
+# File Properties
+FileProperties:
+  last line terminated by newline.  [property newline_Set]
+  newline not set.                  [if !newline_Set][error]  
+
+# Option1
+Option1:
+  -x.                               [if !empty && newline_Set][property -x]
+  -s.                               [if !empty && newline_Set][property -s]
+  None.                             [if !-x && !-s][property None]
+  both -x and -s selected.          [if -x && -s][error]
+-x occurrenced once:
+  True.                             [if -x][property -x_last]
+  False.                            [if -x][property -x_NotLastOccurrence][single]
+-s occurrenced once:
+  True.                             [if -s][property -s_last]
+  False.                            [if -s][property -s_NotLastOccurrence][single]
+  NumberOf-xLastParameters:
+    1.                              [if -x_last || -x_NotLastOccurrence][property one_-xparameter][else][error]
+  NumberOf-sLastParameters:
+    1.                              [if -s_last || -s_NotLastOccurrence][property one_-sparameter][else][error]
+	Option1-sParametersType:
+	  Number.                       [if one_-sparameter][property -snumber][else][error]
+	Option1-sParameters:
+	  -s_valid.                     [if -snumber][property SkipEvenOddNumberLines]
+	  -s_invalid.                   [error]
+	Option1-xParametersType:
+      String.                       [if one_-xparameter][property -xSubstring]
+	Option1-xCheckifEmptyString:    
+	  String not empty.             [if -xSubstring][property -xremovelinescontaining_string_]
+	  Empty String = remove all lines. [if -xSubstring][property removealllines][single]
+# Option2
+Option2:
+  -c.                               [if !empty && newline_Set][property -c]
+  -None.                            [if !-c][property None]
+-c occurrenced once:
+  False.                            [if -c][property -c_NotLastOccurrence][single]
+  True.                             [if -c][property -c_last]
+  NumberOfOption2-cParameters:
+    1.                              [if -c_last || -c_NotLastOccurrence][property one_-cparameter][else][error]
+    Option2Parameters:
+	  -c_valid.                     [if one_-cparameter][property ConvertUpperLower]
+	  -c_invalid.                   [error]
+# Option3
+Option3:
+  -e.                               [if !empty && newline_Set][property -e]
+  -a.                               [if !empty && newline_Set][property -a]
+  -None.                            [if !-e && !-a][property None]
+  both -e and -a selected.          [if -e && -a][error]
+-e occurrenced once:
+  True.                             [if -e][property -e_last]
+  False.                            [if -e][property -e_NotLastOccurrence][single]
+-a occurrenced once:
+  True.                             [if -a][property -a_last]
+  False.                            [if -a][property -a_NotLastOccurrence][single]
+  NumberOfOption3-eParameters:
+    1.                              [if -e_last || -e_NotLastOccurrence][property one_-eparameter][else][error]
+  NumberOfOption3-aParameters:
+    0.                              [if -a_last || -a_NotLastOccurrence][property -azero_parameter][single]
+	Not 0.                          [if -a_last][error]
+  Option3-eParametersType:
+      Can be cast to integer.       [if one_-eparameter][property one_-eInteger]
+	  Cannot be cast to integer.    [if !one_-eInteger][error]
+	Option3-eParameters:
+	  inclusive range of ﹣󠀭25 to 25. [if one_-eInteger][property eparameterinclusive][else][error]     
+# Option4
+Option4:
+  -p.                               [if !empty && newline_Set][property -p]
+  -None.                            [if !-p][property None]
+-p occurrenced once:
+  True.                             [if -p][property -p_last]
+  False.                            [if -p][property -p_NotLastOccurrence][single]
+  NumberOfOption4-pParameters:
+    1.                              [if -p_last || -p_NotLastOccurrence][property one_-pparameter][else][error]
+  is -p parameter string:
+    String.                         [if one_-pparameter][property -pString]
+	Not String.                     [if !-pString][error]
+  is -p parameter empty string:
+    Empty.                          [if -pString][error]
+	Not Empty.                      [if -pString][property -pPrefixset]
