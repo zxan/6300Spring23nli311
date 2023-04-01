@@ -193,7 +193,7 @@ public class MyMainTest {
         String expected = "prefix" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-x", "", "-c", "upper", "-e", "0", "-p", "prefix" inputFile.toString()};
+        String[] args = {"-x", "", "-c", "upper", "-e", "0", "-p", "prefix", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
@@ -225,8 +225,8 @@ public class MyMainTest {
         String[] args = {"-c", "lower", "upper", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, capture.stdout());
-        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertTrue(capture.stdout().isEmpty());
+        Assertions.assertEquals(usageStr, capture.stderr());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
@@ -366,7 +366,7 @@ public class MyMainTest {
         String expected = "e-p parameter occurrenced more than once" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-p", "3", "-p" , "e" inputFile.toString()};
+        String[] args = {"-p", "3", "-p" , "e", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
@@ -380,7 +380,7 @@ public class MyMainTest {
         String input = "-p parameter has multiple parameters" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-p", "3" , "e" inputFile.toString()};
+        String[] args = {"-p", "3" , "e", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertTrue(capture.stdout().isEmpty());
@@ -424,7 +424,7 @@ public class MyMainTest {
         String expected = "Case TFDPOE MLOF" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-x", "TEST", "-c", "upper", "-e", "1", "-p", "Case " inputFile.toString()};
+        String[] args = {"-x", "TEST", "-c", "upper", "-e", "1", "-p", "Case ", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
@@ -456,7 +456,7 @@ public class MyMainTest {
         String expected = "Case083 069 067 079 078 068 032 076 073 078 069" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-x", "-", "-c", "upper", "-a", "-p", "Case" inputFile.toString()};
+        String[] args = {"-x", "-", "-c", "upper", "-a", "-p", "Case", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
@@ -488,7 +488,7 @@ public class MyMainTest {
         String expected = "Casesecond line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-x", "-", "-c", "lower", "-p", "Case" inputFile.toString()};
+        String[] args = {"-x", "-", "-c", "lower", "-p", "Case", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
@@ -501,7 +501,6 @@ public class MyMainTest {
     public void textilatorTest31() {
         String input = "Test 31 -x, -c" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
-        String expected = "second line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-x", "-","-c", "lower", inputFile.toString()};
@@ -648,7 +647,7 @@ public class MyMainTest {
         String expected = "prefix 115 101 099 111 110 100 032 108 105 110 101" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-s", "1","-c", "lower", "-a","-p", "prefix " inputFile.toString()};
+        String[] args = {"-s", "1","-c", "lower", "-a","-p", "prefix ", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
@@ -662,25 +661,6 @@ public class MyMainTest {
         String input = "Test 41 -s, -c, -a" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
         String expected = "115 101 099 111 110 100 032 108 105 110 101" + System.lineSeparator();
-
-        Path inputFile = createFile(input);
-        String[] args = {"-s", "1","-c", "lower", "-a", inputFile.toString()};
-        Main.main(args);
-
-        Assertions.assertEquals(expected, capture.stdout());
-        Assertions.assertTrue(capture.stderr().isEmpty());
-        Assertions.assertEquals(input, getFileContent(inputFile));
-    }
-
-    @Test
-    // Frame #: 41
-    public void textilatorTest41() {
-        String input = "Test 41 -s, -c, -a" + System.lineSeparator()
-                + "Second line" + System.lineSeparator()
-                + "Third Line" + System.lineSeparator()
-                + "Fourth Line" + System.lineSeparator();
-        String expected = "115 101 099 111 110 100 032 108 105 110 101"
-                + "102 111 117 114 116 104 032 108 105 110 101" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-s", "1","-c", "lower", "-a", inputFile.toString()};
@@ -816,7 +796,7 @@ public class MyMainTest {
                 + "String Fourth Line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-s", "1","-p","String "  inputFile.toString()};
+        String[] args = {"-s", "1","-p","String ",  inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
@@ -835,7 +815,7 @@ public class MyMainTest {
                 + "Third Line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-s", "0"  inputFile.toString()};
+        String[] args = {"-s", "0",  inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
@@ -854,7 +834,7 @@ public class MyMainTest {
                 + "* UIJSE MJOF" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-s", "0", "-c", "upper", "-e", "1", "-p", "* "  inputFile.toString()};
+        String[] args = {"-s", "0", "-c", "upper", "-e", "1", "-p", "* ",  inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
@@ -870,8 +850,8 @@ public class MyMainTest {
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
         String expected = "UFTU 51 -D, -F"
-                + "TFDPOE MJOF" + System.lineSeparator();
-                + "UIJSE MJOF" + System.lineSeparator();
+                + "TFDPOE MJOF" + System.lineSeparator()
+                + "UIJSE MJOF" + System.lineSeparator()
                 + "GPVSUI MJOF" + System.lineSeparator();
 
         Path inputFile = createFile(input);
@@ -891,8 +871,8 @@ public class MyMainTest {
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
         String expected = "1 116 101 115 116 032 053 050 032 045 099 044 032 045 112"
-                + "1 115 101 099 111 110 100 032 108 105 110 101" + System.lineSeparator();
-        + "1 116 104 105 114 100 032 108 105 110 101" + System.lineSeparator();
+                + "1 115 101 099 111 110 100 032 108 105 110 101" + System.lineSeparator()
+        + "1 116 104 105 114 100 032 108 105 110 101" + System.lineSeparator()
         + "1 102 111 117 114 116 104 032 108 105 110 101" + System.lineSeparator();
 
         Path inputFile = createFile(input);
@@ -912,8 +892,8 @@ public class MyMainTest {
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
         String expected = "116 101 115 116 032 053 051 032 045 099 044 032 045 097"
-                + "115 101 099 111 110 100 032 108 105 110 101" + System.lineSeparator();
-        + "116 104 105 114 100 032 108 105 110 101" + System.lineSeparator();
+                + "115 101 099 111 110 100 032 108 105 110 101" + System.lineSeparator()
+        + "116 104 105 114 100 032 108 105 110 101" + System.lineSeparator()
         + "102 111 117 114 116 104 032 108 105 110 101" + System.lineSeparator();
 
         Path inputFile = createFile(input);
@@ -938,7 +918,7 @@ public class MyMainTest {
                 + "- Fourth Line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-c", "lower", "-p", "- " inputFile.toString()};
+        String[] args = {"-c", "lower", "-p", "- ", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
@@ -980,7 +960,7 @@ public class MyMainTest {
                 + ". Fourth Line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-e", "0", "-p", ". " inputFile.toString()};
+        String[] args = {"-e", "0", "-p", ". ", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
@@ -1064,7 +1044,7 @@ public class MyMainTest {
                 + "& Fourth Line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-p", "& " inputFile.toString()};
+        String[] args = {"-p", "& ", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
@@ -1078,7 +1058,7 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected "Test 61" + System.lineSeparator()
+        String expected = "Test 61" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
