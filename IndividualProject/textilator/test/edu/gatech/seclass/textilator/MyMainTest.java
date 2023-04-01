@@ -394,7 +394,7 @@ public class MyMainTest {
         String input = "-p has is not a string parameter" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-p", 1, inputFile.toString()};
+        String[] args = {"-p", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertTrue(capture.stdout().isEmpty());
