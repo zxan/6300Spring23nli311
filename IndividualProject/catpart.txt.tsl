@@ -92,14 +92,10 @@ Test Case 23 		<error>  (follows [else])
 
 
 Test Case 24 		<error>  (follows [if])
-   is -p parameter string :  Not String
-
-
-Test Case 25 		<error>  (follows [if])
    is -p parameter empty string :  Empty
 
 
-Test Case 26 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.1.1.0.1.0.1.1.1.1.1.1.2.)
+Test Case 25 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.1.1.0.1.0.1.1.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -x
@@ -125,11 +121,10 @@ Test Case 26 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.1.1.0.1.0.1.1.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 27 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.1.1.0.1.0.1.1.2.0.0.0.0.)
+Test Case 26 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.1.1.0.1.0.1.1.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -x
@@ -155,11 +150,10 @@ Test Case 27 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.1.1.0.1.0.1.1.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 28 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.2.0.1.0.0.0.0.1.1.1.1.2.)
+Test Case 27 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.2.0.1.0.0.0.0.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -x
@@ -185,11 +179,10 @@ Test Case 28 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.2.0.1.0.0.0.0.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 29 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.2.0.1.0.0.0.0.2.0.0.0.0.)
+Test Case 28 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.2.0.1.0.0.0.0.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -x
@@ -215,11 +208,10 @@ Test Case 29 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.2.0.1.0.0.0.0.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 30 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.3.0.0.0.0.0.0.1.1.1.1.2.)
+Test Case 29 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.3.0.0.0.0.0.0.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -x
@@ -245,11 +237,10 @@ Test Case 30 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.3.0.0.0.0.0.0.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 31 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.3.0.0.0.0.0.0.2.0.0.0.0.)
+Test Case 30 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.3.0.0.0.0.0.0.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -x
@@ -275,11 +266,10 @@ Test Case 31 		(Key = 1.1.1.1.0.1.0.0.0.1.1.1.2.1.1.3.0.0.0.0.0.0.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 32 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.1.1.0.1.0.1.1.1.1.1.1.2.)
+Test Case 31 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.1.1.0.1.0.1.1.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -x
@@ -305,11 +295,10 @@ Test Case 32 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.1.1.0.1.0.1.1.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 33 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.1.1.0.1.0.1.1.2.0.0.0.0.)
+Test Case 32 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.1.1.0.1.0.1.1.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -x
@@ -335,11 +324,10 @@ Test Case 33 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.1.1.0.1.0.1.1.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 34 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.2.0.1.0.0.0.0.1.1.1.1.2.)
+Test Case 33 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.2.0.1.0.0.0.0.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -x
@@ -365,11 +353,10 @@ Test Case 34 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.2.0.1.0.0.0.0.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 35 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.2.0.1.0.0.0.0.2.0.0.0.0.)
+Test Case 34 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.2.0.1.0.0.0.0.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -x
@@ -395,11 +382,10 @@ Test Case 35 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.2.0.1.0.0.0.0.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 36 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.3.0.0.0.0.0.0.1.1.1.1.2.)
+Test Case 35 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.3.0.0.0.0.0.0.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -x
@@ -425,11 +411,10 @@ Test Case 36 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.3.0.0.0.0.0.0.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 37 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.3.0.0.0.0.0.0.2.0.0.0.0.)
+Test Case 36 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.3.0.0.0.0.0.0.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -x
@@ -455,11 +440,10 @@ Test Case 37 		(Key = 1.1.1.1.0.1.0.0.0.1.1.2.0.0.0.3.0.0.0.0.0.0.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 38 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.1.1.0.1.0.1.1.1.1.1.1.2.)
+Test Case 37 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.1.1.0.1.0.1.1.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -s
@@ -485,11 +469,10 @@ Test Case 38 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.1.1.0.1.0.1.1.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 39 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.1.1.0.1.0.1.1.2.0.0.0.0.)
+Test Case 38 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.1.1.0.1.0.1.1.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -s
@@ -515,11 +498,10 @@ Test Case 39 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.1.1.0.1.0.1.1.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 40 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.2.0.1.0.0.0.0.1.1.1.1.2.)
+Test Case 39 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.2.0.1.0.0.0.0.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -s
@@ -545,11 +527,10 @@ Test Case 40 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.2.0.1.0.0.0.0.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 41 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.2.0.1.0.0.0.0.2.0.0.0.0.)
+Test Case 40 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.2.0.1.0.0.0.0.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -s
@@ -575,11 +556,10 @@ Test Case 41 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.2.0.1.0.0.0.0.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 42 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.3.0.0.0.0.0.0.1.1.1.1.2.)
+Test Case 41 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.3.0.0.0.0.0.0.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -s
@@ -605,11 +585,10 @@ Test Case 42 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.3.0.0.0.0.0.0.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 43 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.3.0.0.0.0.0.0.2.0.0.0.0.)
+Test Case 42 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.3.0.0.0.0.0.0.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -s
@@ -635,11 +614,10 @@ Test Case 43 		(Key = 1.1.2.0.1.0.1.1.1.0.0.1.2.1.1.3.0.0.0.0.0.0.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 44 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.1.1.0.1.0.1.1.1.1.1.1.2.)
+Test Case 43 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.1.1.0.1.0.1.1.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -s
@@ -665,11 +643,10 @@ Test Case 44 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.1.1.0.1.0.1.1.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 45 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.1.1.0.1.0.1.1.2.0.0.0.0.)
+Test Case 44 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.1.1.0.1.0.1.1.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -s
@@ -695,11 +672,10 @@ Test Case 45 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.1.1.0.1.0.1.1.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 46 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.2.0.1.0.0.0.0.1.1.1.1.2.)
+Test Case 45 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.2.0.1.0.0.0.0.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -s
@@ -725,11 +701,10 @@ Test Case 46 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.2.0.1.0.0.0.0.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 47 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.2.0.1.0.0.0.0.2.0.0.0.0.)
+Test Case 46 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.2.0.1.0.0.0.0.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -s
@@ -755,11 +730,10 @@ Test Case 47 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.2.0.1.0.0.0.0.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 48 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.3.0.0.0.0.0.0.1.1.1.1.2.)
+Test Case 47 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.3.0.0.0.0.0.0.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -s
@@ -785,11 +759,10 @@ Test Case 48 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.3.0.0.0.0.0.0.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 49 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.3.0.0.0.0.0.0.2.0.0.0.0.)
+Test Case 48 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.3.0.0.0.0.0.0.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  -s
@@ -815,11 +788,10 @@ Test Case 49 		(Key = 1.1.2.0.1.0.1.1.1.0.0.2.0.0.0.3.0.0.0.0.0.0.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 50 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.1.1.0.1.0.1.1.1.1.1.1.2.)
+Test Case 49 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.1.1.0.1.0.1.1.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  None
@@ -845,11 +817,10 @@ Test Case 50 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.1.1.0.1.0.1.1.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 51 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.1.1.0.1.0.1.1.2.0.0.0.0.)
+Test Case 50 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.1.1.0.1.0.1.1.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  None
@@ -875,11 +846,10 @@ Test Case 51 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.1.1.0.1.0.1.1.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 52 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.2.0.1.0.0.0.0.1.1.1.1.2.)
+Test Case 51 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.2.0.1.0.0.0.0.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  None
@@ -905,11 +875,10 @@ Test Case 52 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.2.0.1.0.0.0.0.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 53 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.2.0.1.0.0.0.0.2.0.0.0.0.)
+Test Case 52 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.2.0.1.0.0.0.0.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  None
@@ -935,11 +904,10 @@ Test Case 53 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.2.0.1.0.0.0.0.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 54 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.3.0.0.0.0.0.0.1.1.1.1.2.)
+Test Case 53 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.3.0.0.0.0.0.0.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  None
@@ -965,11 +933,10 @@ Test Case 54 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.3.0.0.0.0.0.0.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 55 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.3.0.0.0.0.0.0.2.0.0.0.0.)
+Test Case 54 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.3.0.0.0.0.0.0.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  None
@@ -995,11 +962,10 @@ Test Case 55 		(Key = 1.1.3.0.0.0.0.0.0.0.0.1.2.1.1.3.0.0.0.0.0.0.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 56 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.1.1.0.1.0.1.1.1.1.1.1.2.)
+Test Case 55 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.1.1.0.1.0.1.1.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  None
@@ -1025,11 +991,10 @@ Test Case 56 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.1.1.0.1.0.1.1.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 57 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.1.1.0.1.0.1.1.2.0.0.0.0.)
+Test Case 56 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.1.1.0.1.0.1.1.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  None
@@ -1055,11 +1020,10 @@ Test Case 57 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.1.1.0.1.0.1.1.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 58 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.2.0.1.0.0.0.0.1.1.1.1.2.)
+Test Case 57 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.2.0.1.0.0.0.0.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  None
@@ -1085,11 +1049,10 @@ Test Case 58 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.2.0.1.0.0.0.0.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 59 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.2.0.1.0.0.0.0.2.0.0.0.0.)
+Test Case 58 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.2.0.1.0.0.0.0.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  None
@@ -1115,11 +1078,10 @@ Test Case 59 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.2.0.1.0.0.0.0.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 
 
-Test Case 60 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.3.0.0.0.0.0.0.1.1.1.1.2.)
+Test Case 59 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.3.0.0.0.0.0.0.1.1.1.2.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  None
@@ -1145,11 +1107,10 @@ Test Case 60 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.3.0.0.0.0.0.0.1.1.1.1.2.)
    Option4                      :  -p
    -p occurrenced once          :  True
    NumberOfOption4-pParameters  :  1
-   is -p parameter string       :  String
    is -p parameter empty string :  Not Empty
 
 
-Test Case 61 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.3.0.0.0.0.0.0.2.0.0.0.0.)
+Test Case 60 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.3.0.0.0.0.0.0.2.0.0.0.)
    File                         :  File found
    FileProperties               :  last line terminated by newline
    Option1                      :  None
@@ -1175,6 +1136,5 @@ Test Case 61 		(Key = 1.1.3.0.0.0.0.0.0.0.0.2.0.0.0.3.0.0.0.0.0.0.2.0.0.0.0.)
    Option4                      :  -None
    -p occurrenced once          :  <n/a>
    NumberOfOption4-pParameters  :  <n/a>
-   is -p parameter string       :  <n/a>
    is -p parameter empty string :  <n/a>
 

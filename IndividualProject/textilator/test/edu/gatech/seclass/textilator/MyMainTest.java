@@ -391,20 +391,6 @@ public class MyMainTest {
     @Test
     // Frame #: 24
     public void textilatorTest24() {
-        String input = "-p has is not a string parameter" + System.lineSeparator();
-
-        Path inputFile = createFile(input);
-        String[] args = {"-p", 1, inputFile.toString()};
-        Main.main(args);
-
-        Assertions.assertTrue(capture.stdout().isEmpty());
-        Assertions.assertEquals(usageStr, capture.stderr());
-        Assertions.assertEquals(input, getFileContent(inputFile));
-    }
-
-    @Test
-    // Frame #: 25
-    public void textilatorTest25() {
         String input = "-p parameter is an empty string" + System.lineSeparator();
 
         Path inputFile = createFile(input);
@@ -417,9 +403,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 26
-    public void textilatorTest26() {
-        String input = "TEST 26 -x, -c, -e -p" + System.lineSeparator()
+    // Frame #: 25
+    public void textilatorTest25() {
+        String input = "TEST 25 -x, -c, -e -p" + System.lineSeparator()
                 + "second line" + System.lineSeparator();
         String expected = "Case TFDPOE MLOF" + System.lineSeparator();
 
@@ -433,9 +419,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 27
-    public void textilatorTest27() {
-        String input = "Test 27 -x, -c, -e" + System.lineSeparator()
+    // Frame #: 26
+    public void textilatorTest26() {
+        String input = "Test 26 -x, -c, -e" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
         String expected = "SECOND LINE" + System.lineSeparator();
 
@@ -449,9 +435,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 28
-    public void textilatorTest28() {
-        String input = "Test 28 -x, -c, -a, -p" + System.lineSeparator()
+    // Frame #: 27
+    public void textilatorTest27() {
+        String input = "Test 27 -x, -c, -a, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
         String expected = "Case83 69 67 79 78 68 32 76 73 78 69 " + System.lineSeparator();
 
@@ -465,9 +451,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 29
-    public void textilatorTest29() {
-        String input = "Test 29 -x, -c, -a" + System.lineSeparator()
+    // Frame #: 28
+    public void textilatorTest28() {
+        String input = "Test 28 -x, -c, -a" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
         String expected = "83 69 67 79 78 68 32 76 73 78 69 " + System.lineSeparator();
 
@@ -481,9 +467,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 30
-    public void textilatorTest30() {
-        String input = "Test 30 -x, -c, -p" + System.lineSeparator()
+    // Frame #: 29
+    public void textilatorTest29() {
+        String input = "Test 29 -x, -c, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
         String expected = "Casesecond line" + System.lineSeparator();
 
@@ -497,9 +483,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 31
-    public void textilatorTest31() {
-        String input = "Test 31 -x, -c" + System.lineSeparator()
+    // Frame #: 30
+    public void textilatorTest30() {
+        String input = "Test 30 -x, -c" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
@@ -512,9 +498,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 32
-    public void textilatorTest32() {
-        String input = "Test 32 -x, -e, -p" + System.lineSeparator()
+    // Frame #: 31
+    public void textilatorTest31() {
+        String input = "Test 31 -x, -e, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
         String expected = "prefixRdbnmc khmd" + System.lineSeparator();
 
@@ -528,9 +514,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 33
-    public void textilatorTest33() {
-        String input = "Test 33 -x, -e" + System.lineSeparator()
+    // Frame #: 32
+    public void textilatorTest32() {
+        String input = "Test 32 -x, -e" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
         String expected = "Tfdpoe mjof" + System.lineSeparator();
 
@@ -544,9 +530,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 34
-    public void textilatorTest34() {
-        String input = "Test 34 -x, -a, -p" + System.lineSeparator()
+    // Frame #: 33
+    public void textilatorTest33() {
+        String input = "Test 33 -x, -a, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
         String expected = "prefix83 101 99 111 110 100 32 108 105 110 101 " + System.lineSeparator();
 
@@ -560,9 +546,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 35
-    public void textilatorTest35() {
-        String input = "Test 35 -x, -a" + System.lineSeparator()
+    // Frame #: 34
+    public void textilatorTest34() {
+        String input = "Test 34 -x, -a" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
         String expected = "83 101 99 111 110 100 32 108 105 110 101 " + System.lineSeparator();
 
@@ -576,9 +562,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 36
-    public void textilatorTest36() {
-        String input = "Test 36 -x, -p" + System.lineSeparator()
+    // Frame #: 35
+    public void textilatorTest35() {
+        String input = "Test 35 -x, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
         String expected = "prefixSecond line" + System.lineSeparator();
 
@@ -592,9 +578,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 37
-    public void textilatorTest37() {
-        String input = "Test 37 -x" + System.lineSeparator()
+    // Frame #: 36
+    public void textilatorTest36() {
+        String input = "Test 36 -x" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
         String expected = "Second line" + System.lineSeparator();
 
@@ -608,9 +594,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 38
-    public void textilatorTest38() {
-        String input = "Test 38 -s, -c, -e, p" + System.lineSeparator()
+    // Frame #: 37
+    public void textilatorTest37() {
+        String input = "Test 37 -s, -c, -e, p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
         String expected = "prefixsecond line" + System.lineSeparator();
 
@@ -624,9 +610,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 39
-    public void textilatorTest39() {
-        String input = "Test 39 -s, -c, -e" + System.lineSeparator()
+    // Frame #: 38
+    public void textilatorTest38() {
+        String input = "Test 38 -s, -c, -e" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
         String expected = "tfdpoe mjod" + System.lineSeparator();
 
@@ -640,9 +626,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 40
-    public void textilatorTest40() {
-        String input = "Test 40 -s, -c, -a, -p" + System.lineSeparator()
+    // Frame #: 39
+    public void textilatorTest39() {
+        String input = "Test 39 -s, -c, -a, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
         String expected = "prefix 115 101 99 111 110 100 32 108 105 110 101 " + System.lineSeparator();
 
@@ -656,9 +642,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 41
-    public void textilatorTest41() {
-        String input = "Test 41 -s, -c, -a" + System.lineSeparator()
+    // Frame #: 40
+    public void textilatorTest40() {
+        String input = "Test 40 -s, -c, -a" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
         String expected = "115 101 99 111 110 100 32 108 105 110 101 " + System.lineSeparator();
 
@@ -672,9 +658,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 42
-    public void textilatorTest42() {
-        String input = "Test 42 -s, -c, -p" + System.lineSeparator()
+    // Frame #: 41
+    public void textilatorTest41() {
+        String input = "Test 41 -s, -c, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
@@ -691,9 +677,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 43
-    public void textilatorTest43() {
-        String input = "Test 43 -s, -c" + System.lineSeparator()
+    // Frame #: 42
+    public void textilatorTest42() {
+        String input = "Test 42 -s, -c" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
@@ -710,9 +696,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 44
-    public void textilatorTest44() {
-        String input = "Test 44 -s, -e, -p" + System.lineSeparator()
+    // Frame #: 43
+    public void textilatorTest43() {
+        String input = "Test 43 -s, -e, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
@@ -729,9 +715,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 45
-    public void textilatorTest45() {
-        String input = "Test 45 -s, -e, -p" + System.lineSeparator()
+    // Frame #: 44
+    public void textilatorTest44() {
+        String input = "Test 44 -s, -e, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
@@ -748,9 +734,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 46
-    public void textilatorTest46() {
-        String input = "Test 46 -s, -a, -p" + System.lineSeparator()
+    // Frame #: 45
+    public void textilatorTest45() {
+        String input = "Test 45 -s, -a, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
@@ -767,9 +753,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 47
-    public void textilatorTest47() {
-        String input = "Test 47 -s, -a" + System.lineSeparator()
+    // Frame #: 46
+    public void textilatorTest46() {
+        String input = "Test 46 -s, -a" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
@@ -786,9 +772,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 48
-    public void textilatorTest48() {
-        String input = "Test 48 -s, -p" + System.lineSeparator()
+    // Frame #: 47
+    public void textilatorTest47() {
+        String input = "Test 47 -s, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
@@ -805,13 +791,13 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 49
-    public void textilatorTest49() {
-        String input = "Test 49 -s" + System.lineSeparator()
+    // Frame #: 48
+    public void textilatorTest48() {
+        String input = "Test 48 -s" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "Test 49 -s"
+        String expected = "Test 48 -s"
                 + "Third Line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
@@ -824,13 +810,13 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 50
-    public void textilatorTest50() {
-        String input = "Test 50 -c, -e, -p" + System.lineSeparator()
+    // Frame #: 49
+    public void textilatorTest49() {
+        String input = "Test 49 -c, -e, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "* UFTU 50 -D, -F, -Q"
+        String expected = "* UFTU 49 -D, -F, -Q"
                 + "* UIJSE MJOF" + System.lineSeparator();
 
         Path inputFile = createFile(input);
@@ -843,13 +829,13 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 51
-    public void textilatorTest51() {
-        String input = "Test 51 -c, -e" + System.lineSeparator()
+    // Frame #: 50
+    public void textilatorTest50() {
+        String input = "Test 50 -c, -e" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "UFTU 51 -D, -F"
+        String expected = "UFTU 50 -D, -F"
                 + "TFDPOE MJOF" + System.lineSeparator()
                 + "UIJSE MJOF" + System.lineSeparator()
                 + "GPVSUI MJOF" + System.lineSeparator();
@@ -864,9 +850,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 52
-    public void textilatorTest52() {
-        String input = "Test 52 -c, -p" + System.lineSeparator()
+    // Frame #: 51
+    public void textilatorTest51() {
+        String input = "Test 51 -c, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
@@ -885,9 +871,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 53
-    public void textilatorTest53() {
-        String input = "Test 53 -c, -a" + System.lineSeparator()
+    // Frame #: 52
+    public void textilatorTest52() {
+        String input = "Test 52 -c, -a" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
@@ -906,13 +892,13 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 54
-    public void textilatorTest54() {
-        String input = "Test 54 -c, -p" + System.lineSeparator()
+    // Frame #: 53
+    public void textilatorTest53() {
+        String input = "Test 53 -c, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "- Test 54 -c, -p" + System.lineSeparator()
+        String expected = "- Test 53 -c, -p" + System.lineSeparator()
                 + "- Second line" + System.lineSeparator()
                 + "- Third Line" + System.lineSeparator()
                 + "- Fourth Line" + System.lineSeparator();
@@ -927,13 +913,13 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 55
-    public void textilatorTest55() {
-        String input = "Test 55 -c" + System.lineSeparator()
+    // Frame #: 54
+    public void textilatorTest54() {
+        String input = "Test 54 -c" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "Test 55 -c" + System.lineSeparator()
+        String expected = "Test 54 -c" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
@@ -948,13 +934,13 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 56
-    public void textilatorTest56() {
-        String input = "Test 56 -e, -p" + System.lineSeparator()
+    // Frame #: 55
+    public void textilatorTest55() {
+        String input = "Test 55 -e, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = ". Test 56 -e, -p" + System.lineSeparator()
+        String expected = ". Test 55 -e, -p" + System.lineSeparator()
                 + ". Second line" + System.lineSeparator()
                 + ". Third Line" + System.lineSeparator()
                 + ". Fourth Line" + System.lineSeparator();
@@ -969,13 +955,13 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 57
-    public void textilatorTest57() {
-        String input = "Test 57 -e" + System.lineSeparator()
+    // Frame #: 56
+    public void textilatorTest56() {
+        String input = "Test 56 -e" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "Test 57 -e" + System.lineSeparator()
+        String expected = "Test 56 -e" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
@@ -990,13 +976,13 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 58
-    public void textilatorTest58() {
-        String input = "Test 58 -a, -p" + System.lineSeparator()
+    // Frame #: 57
+    public void textilatorTest57() {
+        String input = "Test 57 -a, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "- 84 101 115 116 32 53 56 32 45 97 44 32 45 112 " + System.lineSeparator()
+        String expected = "- 84 101 115 116 32 53 55 32 45 97 44 32 45 112 " + System.lineSeparator()
                 + "- 83 101 99 111 110 100 32 108 105 110 101 " + System.lineSeparator()
                 + "- 84 104 105 114 100 32 76 105 110 101 " + System.lineSeparator()
                 + "- 70 111 117 114 116 104 32 76 105 110 101 " + System.lineSeparator();
@@ -1011,13 +997,13 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 59
-    public void textilatorTest59() {
-        String input = "Test 59 -a" + System.lineSeparator()
+    // Frame #: 58
+    public void textilatorTest58() {
+        String input = "Test 58 -a" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "84 101 115 116 32 53 57 32 45 97 " + System.lineSeparator()
+        String expected = "84 101 115 116 32 53 56 32 45 97 " + System.lineSeparator()
                 + "83 101 99 111 110 100 32 108 105 110 101 " + System.lineSeparator()
                 + "84 104 105 114 100 32 76 105 110 101 " + System.lineSeparator()
                 + "70 111 117 114 116 104 32 076 105 110 101 " + System.lineSeparator();
@@ -1032,13 +1018,13 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 60
-    public void textilatorTest60() {
-        String input = "Test 60 -a" + System.lineSeparator()
+    // Frame #: 59
+    public void textilatorTest59() {
+        String input = "Test 59 -a" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "& Test 60 -p" + System.lineSeparator()
+        String expected = "& Test 59 -p" + System.lineSeparator()
                 + "& Second line" + System.lineSeparator()
                 + "& Third Line" + System.lineSeparator()
                 + "& Fourth Line" + System.lineSeparator();
@@ -1052,13 +1038,13 @@ public class MyMainTest {
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
     @Test
-    // Frame #: 61
-    public void textilatorTest61() {
-        String input = "Test 61" + System.lineSeparator()
+    // Frame #: 60
+    public void textilatorTest60() {
+        String input = "Test 60" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "Test 61" + System.lineSeparator()
+        String expected = "Test 60" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();

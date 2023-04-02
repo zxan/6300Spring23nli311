@@ -77,9 +77,6 @@ Option4:
   False.                            [if -p][property -p_NotLastOccurrence][single]
   NumberOfOption4-pParameters:
     1.                              [if -p_last || -p_NotLastOccurrence][property one_-pparameter][else][error]
-  is -p parameter string:
-    String.                         [if one_-pparameter][property -pString]
-	Not String.                     [if !-pString][error]
   is -p parameter empty string:
-    Empty.                          [if -pString][error]
-	Not Empty.                      [if -pString][property -pPrefixset]
+    Empty.                          [if one_-pparameter][error]
+	Not Empty.                      [if one_-pparameter][property -pPrefixset]
