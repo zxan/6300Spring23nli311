@@ -277,7 +277,7 @@ public class MyMainTest {
     // Frame #: 16
     public void textilatorTest16() {
         String input = "-a is the not the last." + System.lineSeparator();
-        String expected = "097 032 105 115 032 116 104 101 032 110 111 116 032 116 104 101 032 108 097 115 116 46" + System.lineSeparator();
+        String expected = "97 32 105 115 32 116 104 101 32 110 111 116 32 116 104 101 32 108 97 115 116 46 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-a", "-a", inputFile.toString()};
@@ -306,7 +306,7 @@ public class MyMainTest {
     // Frame #: 18
     public void textilatorTest18() {
         String input = "-a's parameter count is zero" + System.lineSeparator();
-        String expected = "045 097 039 115 032 112 097 114 097 109 101 116 101 114 032 099 111 117 110 116 032 105 115 032 122 101 114 111" + System.lineSeparator();
+        String expected = "45 97 39 115 32 112 97 114 97 109 101 116 101 114 32 99 111 117 110 116 32 105 115 32 122 101 114 111 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-a", inputFile.toString()};
@@ -394,7 +394,7 @@ public class MyMainTest {
         String input = "-p has is not a string parameter" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-p", inputFile.toString()};
+        String[] args = {"-p", 1, inputFile.toString()};
         Main.main(args);
 
         Assertions.assertTrue(capture.stdout().isEmpty());
@@ -453,7 +453,7 @@ public class MyMainTest {
     public void textilatorTest28() {
         String input = "Test 28 -x, -c, -a, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
-        String expected = "Case083 069 067 079 078 068 032 076 073 078 069" + System.lineSeparator();
+        String expected = "Case83 69 67 79 78 68 32 76 73 78 69 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-x", "-", "-c", "upper", "-a", "-p", "Case", inputFile.toString()};
@@ -469,7 +469,7 @@ public class MyMainTest {
     public void textilatorTest29() {
         String input = "Test 29 -x, -c, -a" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
-        String expected = "083 069 067 079 078 068 032 076 073 078 069" + System.lineSeparator();
+        String expected = "83 69 67 79 78 68 32 76 73 78 69 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-x", "-", "-c", "upper", "-a", inputFile.toString()};
@@ -548,7 +548,7 @@ public class MyMainTest {
     public void textilatorTest34() {
         String input = "Test 34 -x, -a, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
-        String expected = "prefix083 101 099 111 110 100 032 108 105 110 101" + System.lineSeparator();
+        String expected = "prefix83 101 99 111 110 100 32 108 105 110 101 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-x", "-","-a","-p","prefix", inputFile.toString()};
@@ -564,7 +564,7 @@ public class MyMainTest {
     public void textilatorTest35() {
         String input = "Test 35 -x, -a" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
-        String expected = "083 101 099 111 110 100 032 108 105 110 101" + System.lineSeparator();
+        String expected = "83 101 99 111 110 100 32 108 105 110 101 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-x", "-","-a", inputFile.toString()};
@@ -644,7 +644,7 @@ public class MyMainTest {
     public void textilatorTest40() {
         String input = "Test 40 -s, -c, -a, -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
-        String expected = "prefix 115 101 099 111 110 100 032 108 105 110 101" + System.lineSeparator();
+        String expected = "prefix 115 101 99 111 110 100 32 108 105 110 101 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-s", "1","-c", "lower", "-a","-p", "prefix ", inputFile.toString()};
@@ -660,7 +660,7 @@ public class MyMainTest {
     public void textilatorTest41() {
         String input = "Test 41 -s, -c, -a" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
-        String expected = "115 101 099 111 110 100 032 108 105 110 101" + System.lineSeparator();
+        String expected = "115 101 99 111 110 100 32 108 105 110 101 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-s", "1","-c", "lower", "-a", inputFile.toString()};
@@ -754,8 +754,8 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "prefix 083 101 099 111 110 100 032 076 105 110 101"
-                + "prefix 070 111 117 114 116 104 032 076 105 110 101" + System.lineSeparator();
+        String expected = "prefix 83 101 99 111 110 100 32 76 105 110 101 "
+                + "prefix 70 111 117 114 116 104 32 76 105 110 101 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-s", "1","-a","-p", "prefix ",  inputFile.toString()};
@@ -773,8 +773,8 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "083 101 099 111 110 100 032 076 105 110 101"
-                + "070 111 117 114 116 104 032 076 105 110 101" + System.lineSeparator();
+        String expected = "83 101 99 111 110 100 32 76 105 110 101 "
+                + "70 111 117 114 116 104 32 076 105 110 101 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-s", "1","-a",  inputFile.toString()};
@@ -870,10 +870,10 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "1 116 101 115 116 032 053 050 032 045 099 044 032 045 112"
-                + "1 115 101 099 111 110 100 032 108 105 110 101" + System.lineSeparator()
-        + "1 116 104 105 114 100 032 108 105 110 101" + System.lineSeparator()
-        + "1 102 111 117 114 116 104 032 108 105 110 101" + System.lineSeparator();
+        String expected = "1 116 101 115 116 32 53 50 32 45 99 44 32 45 112"
+                + "1 115 101 99 111 110 100 32 108 105 110 101" + System.lineSeparator()
+        + "1 116 104 105 114 100 32 108 105 110 101" + System.lineSeparator()
+        + "1 102 111 117 114 116 104 32 108 105 110 101" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-c", "lower", "-a", "-p", "1 ", inputFile.toString()};
@@ -891,10 +891,10 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "116 101 115 116 032 053 051 032 045 099 044 032 045 097"
-                + "115 101 099 111 110 100 032 108 105 110 101" + System.lineSeparator()
-        + "116 104 105 114 100 032 108 105 110 101" + System.lineSeparator()
-        + "102 111 117 114 116 104 032 108 105 110 101" + System.lineSeparator();
+        String expected = "116 101 115 116 32 53 051 32 45 99 44 32 45 97 "
+                + "115 101 99 111 110 100 32 108 105 110 101 " + System.lineSeparator()
+        + "116 104 105 114 100 32 108 105 110 101 " + System.lineSeparator()
+        + "102 111 117 114 116 104 32 108 105 110 101 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-c", "lower", "-a", inputFile.toString()};
@@ -996,10 +996,10 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "- 084 101 115 116 032 053 056 032 045 097 044 032 045 112" + System.lineSeparator()
-                + "- 083 101 099 111 110 100 032 108 105 110 101" + System.lineSeparator()
-                + "- 084 104 105 114 100 032 076 105 110 101" + System.lineSeparator()
-                + "- 070 111 117 114 116 104 032 076 105 110 101" + System.lineSeparator();
+        String expected = "- 84 101 115 116 32 53 56 32 45 97 44 32 45 112 " + System.lineSeparator()
+                + "- 83 101 99 111 110 100 32 108 105 110 101 " + System.lineSeparator()
+                + "- 84 104 105 114 100 32 76 105 110 101 " + System.lineSeparator()
+                + "- 70 111 117 114 116 104 32 76 105 110 101 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-a", "-p", "- ", inputFile.toString()};
@@ -1017,10 +1017,10 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "084 101 115 116 032 053 057 032 045 097" + System.lineSeparator()
-                + "083 101 099 111 110 100 032 108 105 110 101" + System.lineSeparator()
-                + "084 104 105 114 100 032 076 105 110 101" + System.lineSeparator()
-                + "070 111 117 114 116 104 032 076 105 110 101" + System.lineSeparator();
+        String expected = "84 101 115 116 32 53 57 32 45 97 " + System.lineSeparator()
+                + "83 101 99 111 110 100 32 108 105 110 101 " + System.lineSeparator()
+                + "84 104 105 114 100 32 76 105 110 101 " + System.lineSeparator()
+                + "70 111 117 114 116 104 32 076 105 110 101 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-a", inputFile.toString()};
