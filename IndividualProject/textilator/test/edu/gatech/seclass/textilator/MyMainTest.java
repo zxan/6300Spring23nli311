@@ -190,7 +190,7 @@ public class MyMainTest {
     public void textilatorTest10() {
         String input = "Test 10 -x" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
-        String expected = "prefix" + System.lineSeparator();
+        String expected = "prefix " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-x", "", "-c", "upper", "-e", "0", "-p", "prefix", inputFile.toString()};
