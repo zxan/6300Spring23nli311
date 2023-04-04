@@ -90,7 +90,7 @@ public class MyMainTest {
         String input = "Option -s and -x selected" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {inputFile.toString()};
+        String[] args = {"-x", "O", "-s", "-",inputFile.toString()};
         Main.main(args);
 
         Assertions.assertTrue(capture.stdout().isEmpty());
@@ -102,7 +102,7 @@ public class MyMainTest {
     // Frame #: 4
     public void textilatorTest4() {
         String input = "-x is not the last occurrence" + System.lineSeparator();
-        String expected = "x is not the last occurrence" + System.lineSeparator();
+        String expected = System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-x", "O", "-x", "-", inputFile.toString()};
@@ -117,7 +117,7 @@ public class MyMainTest {
     // Frame #: 5
     public void textilatorTest5() {
         String input = "-s is not the last occurrence" + System.lineSeparator();
-        String expected = "" + System.lineSeparator();
+        String expected = "-s is not the last occurrence" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-s", "1", "-s", "0", inputFile.toString()};
@@ -190,7 +190,7 @@ public class MyMainTest {
     public void textilatorTest10() {
         String input = "Test 10 -x" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
-        String expected = "prefix " + System.lineSeparator();
+        String expected = "" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-x", "", "-c", "upper", "-e", "0", "-p", "prefix ", inputFile.toString()};
@@ -407,7 +407,7 @@ public class MyMainTest {
     public void textilatorTest25() {
         String input = "TEST 25 -x, -c, -e -p" + System.lineSeparator()
                 + "second line" + System.lineSeparator();
-        String expected = "Case TFDPOE MLOF" + System.lineSeparator();
+        String expected = "Case TFDPOE MJOF " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-x", "TEST", "-c", "upper", "-e", "1", "-p", "Case ", inputFile.toString()};
@@ -487,13 +487,14 @@ public class MyMainTest {
     public void textilatorTest30() {
         String input = "Test 30 -x, -c" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
+        String expected = "second line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-x", "-","-c", "lower", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertTrue(capture.stdout().isEmpty());
-        Assertions.assertEquals(usageStr, capture.stderr());
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
@@ -614,7 +615,7 @@ public class MyMainTest {
     public void textilatorTest38() {
         String input = "Test 38 -s, -c, -e" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
-        String expected = "tfdpoe mjod" + System.lineSeparator();
+        String expected = "tfdpoe mjof " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-s", "1","-c", "lower", "-e", "1", inputFile.toString()};
@@ -664,7 +665,7 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "Test Second line"
+        String expected = "Test Second line"+ System.lineSeparator()
                 + "Test Fourth line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
@@ -683,7 +684,7 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "SECOND LINE"
+        String expected = "SECOND LINE"+ System.lineSeparator()
                 + "FOURTH LINE" + System.lineSeparator();
 
         Path inputFile = createFile(input);
@@ -702,7 +703,7 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "Prefix Second Line"
+        String expected = "Prefix Second Line" + System.lineSeparator()
                 + "Prefix Fourth Line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
@@ -721,7 +722,7 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "Rdbnmc Kjmd"
+        String expected = "Rdbnmc Kjmd" + System.lineSeparator()
                 + "Entqsg Kjmd" + System.lineSeparator();
 
         Path inputFile = createFile(input);
@@ -740,7 +741,7 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "prefix 83 101 99 111 110 100 32 76 105 110 101 "
+        String expected = "prefix 83 101 99 111 110 100 32 76 105 110 101 "+ System.lineSeparator()
                 + "prefix 70 111 117 114 116 104 32 76 105 110 101 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
@@ -759,7 +760,7 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "83 101 99 111 110 100 32 76 105 110 101 "
+        String expected = "83 101 99 111 110 100 32 76 105 110 101 "+ System.lineSeparator()
                 + "70 111 117 114 116 104 32 076 105 110 101 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
@@ -778,7 +779,7 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "String Second line"
+        String expected = "String Second line"+ System.lineSeparator()
                 + "String Fourth Line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
@@ -797,7 +798,7 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "Test 48 -s"
+        String expected = "Test 48 -s"+ System.lineSeparator()
                 + "Third Line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
@@ -816,7 +817,7 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "* UFTU 49 -D, -F, -Q"
+        String expected = "* UFTU 49 -D, -F, -Q"+ System.lineSeparator()
                 + "* UIJSE MJOF" + System.lineSeparator();
 
         Path inputFile = createFile(input);
@@ -835,7 +836,7 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "UFTU 50 -D, -F"
+        String expected = "UFTU 50 -D, -F"+ System.lineSeparator()
                 + "TFDPOE MJOF" + System.lineSeparator()
                 + "UIJSE MJOF" + System.lineSeparator()
                 + "GPVSUI MJOF" + System.lineSeparator();
@@ -856,7 +857,7 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "1 116 101 115 116 32 53 50 32 45 99 44 32 45 112"
+        String expected = "1 116 101 115 116 32 53 50 32 45 99 44 32 45 112"+ System.lineSeparator()
                 + "1 115 101 99 111 110 100 32 108 105 110 101" + System.lineSeparator()
         + "1 116 104 105 114 100 32 108 105 110 101" + System.lineSeparator()
         + "1 102 111 117 114 116 104 32 108 105 110 101" + System.lineSeparator();
@@ -877,7 +878,7 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "116 101 115 116 32 53 051 32 45 99 44 32 45 97 "
+        String expected = "116 101 115 116 32 53 051 32 45 99 44 32 45 97 "+ System.lineSeparator()
                 + "115 101 99 111 110 100 32 108 105 110 101 " + System.lineSeparator()
         + "116 104 105 114 100 32 108 105 110 101 " + System.lineSeparator()
         + "102 111 117 114 116 104 32 108 105 110 101 " + System.lineSeparator();
@@ -898,10 +899,10 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "- Test 53 -c, -p" + System.lineSeparator()
-                + "- Second line" + System.lineSeparator()
-                + "- Third Line" + System.lineSeparator()
-                + "- Fourth Line" + System.lineSeparator();
+        String expected = "- test 53 -c, -p" + System.lineSeparator()
+                + "- second line" + System.lineSeparator()
+                + "- third line" + System.lineSeparator()
+                + "- fourth line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-c", "lower", "-p", "- ", inputFile.toString()};
@@ -919,10 +920,10 @@ public class MyMainTest {
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "Test 54 -c" + System.lineSeparator()
-                + "Second line" + System.lineSeparator()
-                + "Third Line" + System.lineSeparator()
-                + "Fourth Line" + System.lineSeparator();
+        String expected = "test 54 -c" + System.lineSeparator()
+                + "second line" + System.lineSeparator()
+                + "third line" + System.lineSeparator()
+                + "fourth line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-c", "lower", inputFile.toString()};
@@ -1006,7 +1007,7 @@ public class MyMainTest {
         String expected = "84 101 115 116 32 53 56 32 45 97 " + System.lineSeparator()
                 + "83 101 99 111 110 100 32 108 105 110 101 " + System.lineSeparator()
                 + "84 104 105 114 100 32 76 105 110 101 " + System.lineSeparator()
-                + "70 111 117 114 116 104 32 076 105 110 101 " + System.lineSeparator();
+                + "70 111 117 114 116 104 32 76 105 110 101 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-a", inputFile.toString()};
@@ -1020,7 +1021,7 @@ public class MyMainTest {
     @Test
     // Frame #: 59
     public void textilatorTest59() {
-        String input = "Test 59 -a" + System.lineSeparator()
+        String input = "Test 59 -p" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
