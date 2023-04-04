@@ -193,7 +193,7 @@ public class MyMainTest {
         String expected = "prefix " + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-x", "", "-c", "upper", "-e", "0", "-p", "prefix", inputFile.toString()};
+        String[] args = {"-x", "", "-c", "upper", "-e", "0", "-p", "prefix ", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
@@ -277,7 +277,7 @@ public class MyMainTest {
     // Frame #: 16
     public void textilatorTest16() {
         String input = "-a is the not the last." + System.lineSeparator();
-        String expected = "97 32 105 115 32 116 104 101 32 110 111 116 32 116 104 101 32 108 97 115 116 46 " + System.lineSeparator();
+        String expected = "45 97 32 105 115 32 116 104 101 32 110 111 116 32 116 104 101 32 108 97 115 116 46 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-a", "-a", inputFile.toString()};
@@ -687,7 +687,7 @@ public class MyMainTest {
                 + "FOURTH LINE" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-s", "1","-c", "UPPER", inputFile.toString()};
+        String[] args = {"-s", "1","-c", "upper", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertEquals(expected, capture.stdout());
