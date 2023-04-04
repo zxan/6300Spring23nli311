@@ -190,13 +190,12 @@ public class MyMainTest {
     public void textilatorTest10() {
         String input = "Test 10 -x" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
-        String expected = " " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-x", "", "-c", "upper", "-e", "0", "-p", "prefix ", inputFile.toString()};
         Main.main(args);
 
-        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stdout().isEmpty());
         Assertions.assertTrue(capture.stderr().isEmpty());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
