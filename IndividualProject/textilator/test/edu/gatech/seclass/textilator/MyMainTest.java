@@ -1200,7 +1200,7 @@ public class MyMainTest {
                 + "Fourth Line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
-        String[] args = {"-e", "1", "-s", "0", "-x", "6", "-a", "-c", "upper" inputFile.toString()};
+        String[] args = {"-e", "1", "-s", "0", "-x", "6", "-a", "-c", "upper", inputFile.toString()};
         Main.main(args);
 
         Assertions.assertTrue(capture.stdout().isEmpty());
