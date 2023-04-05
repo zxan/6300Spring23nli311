@@ -1143,24 +1143,7 @@ public class MyMainTest {
     @Test
     // Frame #: 66
     public void textilatorTest66() {
-        String input = "Test 66 -a" + System.lineSeparator()
-                + "Second line" + System.lineSeparator()
-                + "Third Line" + System.lineSeparator()
-                + "Fourth Line" + System.lineSeparator();
-
-        Path inputFile = createFile(input);
-        String[] args = {"-a", inputFile.toString()};
-        Main.main(args);
-
-        Assertions.assertTrue(capture.stdout().isEmpty());
-        Assertions.assertEquals(usageStr, capture.stderr());
-        Assertions.assertEquals(input, getFileContent(inputFile));
-    }
-
-    @Test
-    // Frame #: 67
-    public void textilatorTest67() {
-        String input = "Test 63 -s" + System.lineSeparator()
+        String input = "Test 66 -s" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
@@ -1175,9 +1158,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 68
-    public void textilatorTest68() {
-        String input = "Test 68 -whatever" + System.lineSeparator()
+    // Frame #: 67
+    public void textilatorTest67() {
+        String input = "Test 67 -whatever" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
@@ -1192,9 +1175,9 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 69
-    public void textilatorTest69() {
-        String input = "Test 69 -all" + System.lineSeparator()
+    // Frame #: 68
+    public void textilatorTest68() {
+        String input = "Test 68 -all" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
@@ -1209,13 +1192,14 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 70
-    public void textilatorTest70() {
-        String input = "Test 70 -no file" + System.lineSeparator()
+    // Frame #: 69
+    public void textilatorTest69() {
+        String input = "Test 69 -no file" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
 
+        Path inputFile = createFile();
         String[] args = {"-a", inputFile.toString()};
         Main.main(args);
 
