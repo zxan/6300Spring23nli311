@@ -1079,7 +1079,7 @@ public class MyMainTest {
         String input = "    Test 62 -x" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
         String expected = "    Test 62 -x"+ System.lineSeparator()
-                +Second line" + System.lineSeparator();
+                + "Second line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-x", "\\t", inputFile.toString()};
