@@ -260,8 +260,8 @@ public class MyMainTest {
     @Test
     // Frame #: 15
     public void textilatorTest15() {
-        String input = "-e is the not the last occurrence" + System.lineSeparator();
-        String expected = "-e is the not the last occurrence" + System.lineSeparator();
+        String input = "-e is the not the last occurrence ãö1" + System.lineSeparator();
+        String expected = "-e is the not the last occurrence ãö1" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-e", "24", "-e", "0", inputFile.toString()};
@@ -304,8 +304,8 @@ public class MyMainTest {
     @Test
     // Frame #: 18
     public void textilatorTest18() {
-        String input = "-a's parameter count is zero" + System.lineSeparator();
-        String expected = "45 97 39 115 32 112 97 114 97 109 101 116 101 114 32 99 111 117 110 116 32 105 115 32 122 101 114 111 " + System.lineSeparator();
+        String input = "-a's parameter count is zero#~ " + System.lineSeparator();
+        String expected = "45 97 39 115 32 112 97 114 97 109 101 116 101 114 32 99 111 117 110 116 32 105 115 32 122 101 114 111 35 126 32 " + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-a", inputFile.toString()};
@@ -319,7 +319,7 @@ public class MyMainTest {
     @Test
     // Frame #: 19
     public void textilatorTest19() {
-        String input = "-a's parameter count is not zero" + System.lineSeparator();
+        String input = "-a's parameter count is not zero ãö" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-a", "1", inputFile.toString()};
@@ -333,7 +333,7 @@ public class MyMainTest {
     @Test
     // Frame #: 20
     public void textilatorTest20() {
-        String input = "-e's parameter count isn't an integer" + System.lineSeparator();
+        String input = "-e's parameter count isn't an integer ãö1" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-e", "one", inputFile.toString()};
@@ -361,8 +361,8 @@ public class MyMainTest {
     @Test
     // Frame #: 22
     public void textilatorTest22() {
-        String input = "-p parameter occurrenced more than once" + System.lineSeparator();
-        String expected = "e-p parameter occurrenced more than once" + System.lineSeparator();
+        String input = "-p parameter occurrenced more than once ãö1" + System.lineSeparator();
+        String expected = "e-p parameter occurrenced more than once ãö1" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-p", "3", "-p" , "e", inputFile.toString()};
@@ -390,7 +390,7 @@ public class MyMainTest {
     @Test
     // Frame #: 24
     public void textilatorTest24() {
-        String input = "-p parameter is an empty string" + System.lineSeparator();
+        String input = "-p parameter is an empty string ãö1" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-p", "", inputFile.toString()};
@@ -999,11 +999,11 @@ public class MyMainTest {
     @Test
     // Frame #: 58
     public void textilatorTest58() {
-        String input = "Test 58 -a" + System.lineSeparator()
+        String input = "Test 58 -a€" + System.lineSeparator()
                 + "Second line" + System.lineSeparator()
                 + "Third Line" + System.lineSeparator()
                 + "Fourth Line" + System.lineSeparator();
-        String expected = "84 101 115 116 32 53 56 32 45 97 " + System.lineSeparator()
+        String expected = "84 101 115 116 32 53 56 32 45 97 €" + System.lineSeparator()
                 + "83 101 99 111 110 100 32 108 105 110 101 " + System.lineSeparator()
                 + "84 104 105 114 100 32 76 105 110 101 " + System.lineSeparator()
                 + "70 111 117 114 116 104 32 76 105 110 101 " + System.lineSeparator();
@@ -1055,6 +1055,172 @@ public class MyMainTest {
 
         Assertions.assertEquals(expected, capture.stdout());
         Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    // Frame #: 61
+    public void textilatorTest61() {
+        String input = "Test 61 -s, -c, -a, -p" + System.lineSeparator()
+                + "Second line" + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s", "1.0","-c", "lower", "-a","-p", "prefix ", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertTrue(capture.stdout().isEmpty());
+        Assertions.assertEquals(usageStr, capture.stderr());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    // Frame #: 62
+    public void textilatorTest62() {
+        String input = "    Test 62 -x" + System.lineSeparator()
+                + "Second line" + System.lineSeparator();
+        String expected = "Second line" + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-x", "\\t", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertEquals(expected, capture.stdout());
+        Assertions.assertTrue(capture.stderr().isEmpty());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    // Frame #: 63
+    public void textilatorTest63() {
+        String input = "Test 63 -e" + System.lineSeparator()
+                + "Second line" + System.lineSeparator()
+                + "Third Line" + System.lineSeparator()
+                + "Fourth Line" + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-e", "string", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertTrue(capture.stdout().isEmpty());
+        Assertions.assertEquals(usageStr, capture.stderr());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    // Frame #: 64
+    public void textilatorTest64() {
+        String input = "Test 64 -c" + System.lineSeparator()
+                + "Second line" + System.lineSeparator()
+                + "Third Line" + System.lineSeparator()
+                + "Fourth Line" + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-c", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertTrue(capture.stdout().isEmpty());
+        Assertions.assertEquals(usageStr, capture.stderr());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    // Frame #: 65
+    public void textilatorTest65() {
+        String input = "Test 65 -s" + System.lineSeparator()
+                + "Second line" + System.lineSeparator()
+                + "Third Line" + System.lineSeparator()
+                + "Fourth Line" + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertTrue(capture.stdout().isEmpty());
+        Assertions.assertEquals(usageStr, capture.stderr());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    // Frame #: 66
+    public void textilatorTest66() {
+        String input = "Test 66 -a" + System.lineSeparator()
+                + "Second line" + System.lineSeparator()
+                + "Third Line" + System.lineSeparator()
+                + "Fourth Line" + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-a", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertTrue(capture.stdout().isEmpty());
+        Assertions.assertEquals(usageStr, capture.stderr());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    // Frame #: 67
+    public void textilatorTest67() {
+        String input = "Test 63 -s" + System.lineSeparator()
+                + "Second line" + System.lineSeparator()
+                + "Third Line" + System.lineSeparator()
+                + "Fourth Line" + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-s", "string", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertTrue(capture.stdout().isEmpty());
+        Assertions.assertEquals(usageStr, capture.stderr());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    // Frame #: 68
+    public void textilatorTest68() {
+        String input = "Test 68 -whatever" + System.lineSeparator()
+                + "Second line" + System.lineSeparator()
+                + "Third Line" + System.lineSeparator()
+                + "Fourth Line" + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-whatever", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertTrue(capture.stdout().isEmpty());
+        Assertions.assertEquals(usageStr, capture.stderr());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    // Frame #: 69
+    public void textilatorTest69() {
+        String input = "Test 69 -all" + System.lineSeparator()
+                + "Second line" + System.lineSeparator()
+                + "Third Line" + System.lineSeparator()
+                + "Fourth Line" + System.lineSeparator();
+
+        Path inputFile = createFile(input);
+        String[] args = {"-e", "1", "-s", "0", "-x", "6", "-a", "-c", "upper" inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertTrue(capture.stdout().isEmpty());
+        Assertions.assertEquals(usageStr, capture.stderr());
+        Assertions.assertEquals(input, getFileContent(inputFile));
+    }
+
+    @Test
+    // Frame #: 70
+    public void textilatorTest70() {
+        String input = "Test 70 -no file" + System.lineSeparator()
+                + "Second line" + System.lineSeparator()
+                + "Third Line" + System.lineSeparator()
+                + "Fourth Line" + System.lineSeparator();
+
+        String[] args = {"-a", inputFile.toString()};
+        Main.main(args);
+
+        Assertions.assertTrue(capture.stdout().isEmpty());
+        Assertions.assertEquals(usageStr, capture.stderr());
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
 }
