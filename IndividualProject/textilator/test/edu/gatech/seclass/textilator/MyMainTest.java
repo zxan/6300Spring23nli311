@@ -1078,7 +1078,8 @@ public class MyMainTest {
     public void textilatorTest62() {
         String input = "    Test 62 -x" + System.lineSeparator()
                 + "Second line" + System.lineSeparator();
-        String expected = "Second line" + System.lineSeparator();
+        String expected = "    Test 62 -x"+ System.lineSeparator()
+                +Second line" + System.lineSeparator();
 
         Path inputFile = createFile(input);
         String[] args = {"-x", "\\t", inputFile.toString()};
@@ -1194,7 +1195,7 @@ public class MyMainTest {
     @Test
 // Frame #: 69
     public void textilatorTest69() {
-        String[] args = {"-a", "nonexistentfile.txt"}; 
+        String[] args = {"-a", "nonexistentfile.txt"};
         Main.main(args);
 
         Assertions.assertTrue(capture.stdout().isEmpty());
