@@ -1192,19 +1192,12 @@ public class MyMainTest {
     }
 
     @Test
-    // Frame #: 69
+// Frame #: 69
     public void textilatorTest69() {
-        String input = "Test 69 -no file" + System.lineSeparator()
-                + "Second line" + System.lineSeparator()
-                + "Third Line" + System.lineSeparator()
-                + "Fourth Line" + System.lineSeparator();
-
-        Path inputFile = createFile();
-        String[] args = {"-a", inputFile.toString()};
+        String[] args = {"-a", "nonexistentfile.txt"}; 
         Main.main(args);
 
         Assertions.assertTrue(capture.stdout().isEmpty());
         Assertions.assertEquals(usageStr, capture.stderr());
-        Assertions.assertEquals(input, getFileContent(inputFile));
     }
 }
