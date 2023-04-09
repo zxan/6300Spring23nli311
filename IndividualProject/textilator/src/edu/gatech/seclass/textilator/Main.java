@@ -18,9 +18,37 @@ public class Main {
                     String content = new String(Files.readAllBytes(file.toPath()));
                     if (content.endsWith(System.lineSeparator())) {
                         System.out.println("Success and Last argument is a text file in the same directory as Main.java");
+
+                        String lastCParam = null;
+                        boolean cUsed = false;
+
                         for (int i = 1; i < args.length - 1; i++) {
-                            System.out.println("Argument " + i + ": " + args[i]);
+                            switch(args[i]) {
+                                case "-c":
+                                    if (i < args.length - 1 && (args[i+1].equals("upper") || args[i+1].equals("lower"))) {
+                                        lastCParam = args[i+1];
+                                        System.out.println("-c parameter: " + lastCParam);
+                                        i++;
+                                        cUsed = true;
+                                    } else {
+                                        System.out.println("Missing or invalid parameter for -c");
+                                    }
+                                    break;
+                                case "-a":
+                                    System.out.println("-a parameter: none");
+                                    break;
+                                default:
+                                    System.out.println("Unknown argument: " + args[i]);
+                                    break;
+                            }
                         }
+
+                        if (cUsed) {
+                            System.out.println("Last -c parameter: " + lastCParam);
+                        } else {
+                            System.out.println("-c option was not used");
+                        }
+
                     } else {
                         System.out.println("Last line of the text file does not end with a line separator. This is an empty file.");
                     }
@@ -33,6 +61,8 @@ public class Main {
         } else {
             System.out.println("Error: Invalid command format.");
         }
+
+
     }
 
     private static void usage() {
