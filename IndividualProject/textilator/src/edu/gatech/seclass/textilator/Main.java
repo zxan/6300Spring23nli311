@@ -176,7 +176,7 @@ public class Main {
     }
 
     private static String runX(String content, String lastXParam){
-        String[] xLines = content.split("\\r?\\n");
+        String[] xLines = content.split(System.lineSeparator());
         StringBuilder result = new StringBuilder();
         for (String xLine : xLines){
             if (!xLine.contains(lastXParam)){
@@ -187,7 +187,7 @@ public class Main {
     }
 
     private static String runS(String content, String lastSParam) {
-        String[] sLines = content.split("\\r?\\n");
+        String[] sLines = content.split(System.lineSeparator());
         StringBuilder result = new StringBuilder();
         int Snum = Integer.parseInt(lastSParam);
         for (int i = 0; i < sLines.length; i++) {
@@ -246,10 +246,10 @@ public class Main {
     }
 
     private static String runP(String content, String lastPParam) {
-        String[] pLines = content.split("\\r?\\n");
+        String[] pLines = content.split(System.lineSeparator());
         StringBuilder result = new StringBuilder();
         for (String pLine : pLines) {
-            result.append(lastPParam).append(pLine).append("\n");
+            result.append(lastPParam).append(pLine).append(System.lineSeparator());
         }
         return result.toString();
     }
