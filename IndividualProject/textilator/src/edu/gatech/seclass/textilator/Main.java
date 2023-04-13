@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
         // Empty Skeleton Method
         boolean error = false;
-        if (args.length > 1 && args[0].equals("textilator")) {
+        if (args.length > 0) {
             File file = new File(args[args.length-1]);
             if (file.isFile() && file.exists() && file.getName().endsWith(".txt")) {
                 try {
@@ -33,7 +33,7 @@ public class Main {
                         boolean xUsed = false;
 
 
-                        for (int i = 1; i < args.length - 1; i++) {
+                        for (int i = 0; i < args.length - 1; i++) {
                             switch(args[i]) {
                                 case "-c":
                                     if ((args[i+1].equals("upper") || args[i+1].equals("lower"))) {
@@ -148,8 +148,11 @@ public class Main {
                             if(pUsed){
                                 content = runP(content, lastPParam);
                             }
+                            String regex = "\\R+$"; // regular expression for matching the last line separator
+                            String result = content.replaceAll(regex, ""); // remove the last line separator
+                            System.out.println(result); // prints "Hello\nWorld!"
 
-                            System.out.println(content);
+
 
                         }
 

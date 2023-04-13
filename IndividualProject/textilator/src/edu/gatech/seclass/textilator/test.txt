@@ -1,1 +1,2 @@
--a's parameter count is zero#~ 
+Test 26 -x, -c, -e
+Second line
