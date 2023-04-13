@@ -148,9 +148,7 @@ public class Main {
                             if(pUsed){
                                 content = runP(content, lastPParam);
                             }
-                            String regex = "\\R+$"; // regular expression for matching the last line separator
-                            String result = content.replaceAll(regex, ""); // remove the last line separator
-                            System.out.println(result); // prints "Hello\nWorld!"
+                            System.out.print(content);
 
 
 
@@ -186,6 +184,7 @@ public class Main {
                 result.append(xLine).append(System.lineSeparator());
             }
         }
+
         return result.toString();
     }
 
@@ -194,7 +193,7 @@ public class Main {
         StringBuilder result = new StringBuilder();
         int Snum = Integer.parseInt(lastSParam);
         for (int i = 0; i < sLines.length; i++) {
-            if ((i % 2 == 0 && Snum == 0) || (i % 2 != 0 && Snum == 1)) {
+            if ((i % 2 != 0 && Snum == 0) || (i % 2 == 0 && Snum == 1)) {
                 continue;
             }
             result.append(sLines[i]).append(System.lineSeparator());
