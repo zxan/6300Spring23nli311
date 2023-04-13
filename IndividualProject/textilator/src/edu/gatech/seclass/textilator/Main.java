@@ -17,7 +17,7 @@ public class Main {
             if (file.isFile() && file.exists() && file.getName().endsWith(".txt")) {
                 try {
                     String content = new String(Files.readAllBytes(file.toPath()));
-                    if (content.endsWith(System.lineSeparator())) {
+                    if (content.endsWith(System.lineSeparator()) || content.length() == 0) {
                         //System.out.println("Success and Last argument is a text file in the same directory as Main.java");
 
                         boolean aUsed = false;
@@ -148,7 +148,10 @@ public class Main {
                             if(pUsed){
                                 content = runP(content, lastPParam);
                             }
-                            System.out.print(content);
+                            if (xUsed && lastXParam.equals("")){
+                                content = "";
+                            }
+                            System.out.print(content); // prints "Hello\nWorld!"
 
 
 
