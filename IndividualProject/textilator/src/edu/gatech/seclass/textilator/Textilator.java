@@ -3,8 +3,13 @@ package edu.gatech.seclass.textilator;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.io.File;
 
 public class Textilator implements TextilatorInterface {
+
     private String filepath;
     private LineParity lineToSkip;
     private String excludeString;
@@ -12,6 +17,18 @@ public class Textilator implements TextilatorInterface {
     private int cipherText;
     private boolean encodeLines;
     private String prefix;
+    boolean aUsed = false;
+    String lastCParam = null;
+    boolean cUsed = false;
+    String lastEParam = null;
+    boolean eUsed = false;
+    String lastSParam = null;
+    boolean sUsed = false;
+    String lastPParam = null;
+    boolean pUsed = false;
+    String lastXParam = null;
+    boolean xUsed = false;
+    boolean error = false;
 
     public Textilator() {
         reset();
@@ -26,6 +43,18 @@ public class Textilator implements TextilatorInterface {
         cipherText = 0;
         encodeLines = false;
         prefix = null;
+        error = false;
+        aUsed = false;
+        lastCParam = null;
+        cUsed = false;
+        lastEParam = null;
+        eUsed = false;
+        lastSParam = null;
+        sUsed = false;
+        lastPParam = null;
+        pUsed = false;
+        lastXParam = null;
+        xUsed = false;
     }
 
     @Override
@@ -35,139 +64,103 @@ public class Textilator implements TextilatorInterface {
 
     @Override
     public void setLineToSkip(LineParity lineToSkip) {
-        this.lineToSkip = lineToSkip;
+        //S
+        sUsed = true;
+        lastSParam = lineToSkip.toString();
     }
 
     @Override
     public void setExcludeString(String excludeString) {
-        this.excludeString = excludeString;
+        //X
+        xUsed = true;
+        lastXParam = excludeString.toString();
     }
 
     @Override
     public void setLetterCase(Case letterCase) {
-        this.letterCase = letterCase;
+        //C
+        cUsed = true;
+        lastCParam = letterCase.toString();
     }
 
     @Override
     public void setCipherText(int shiftAmount) {
-        this.cipherText = shiftAmount;
+        //E
+        eUsed = true;
+        lastEParam = Integer.toString(shiftAmount);
     }
 
     @Override
     public void setEncodeLines(boolean encodeLines) {
+        //A
         this.encodeLines = encodeLines;
     }
 
     @Override
     public void setPrefix(String prefix) {
-        this.prefix = prefix;
+        //P
+        pUsed = true;
+        lastPParam = prefix;
     }
 
     @Override
     public void textilator() throws TextilatorException {
-        // Check that the filepath has been set
         if (filepath == null) {
             throw new TextilatorException("Usage: textilator [ -s number | -x substring | -c case | -e num | -a | -p prefix ] FILE");
-        }
+        } else {
+            File file = new File(filepath);
+            if (file.isFile() && file.exists() && file.getName().endsWith(".txt")) {
+                try {
+                    String content = new String(Files.readAllBytes(Paths.get(filepath)));
+                    if (content.endsWith(System.lineSeparator()) || content.length() == 0) {
+                        // Process the contents of the file here
+                        if (sUsed && xUsed){
+                            //System.out.println("Error X and S used");
+                            error = true;
+                        }
+                        if (aUsed && eUsed){
+                            //System.out.println("Error A and E used");
+                            error = true;
+                        }
+                        if (pUsed && lastPParam.equals("")){
+                            error = true;
+                        }
+                        if (!error){
+                            if(xUsed){
+                                content = runX(content, lastXParam);
+                            }
+                            if(sUsed){
+                                content = runS(content, lastSParam);
+                            }
+                            if(cUsed){
+                                content = runC(content, lastCParam);
+                            }
+                            if(eUsed){
+                                content = runE(content, lastEParam);
+                            }
 
-        try (BufferedReader br = new BufferedReader(new FileReader(filepath))) {
-            String line;
-            int lineNumber = 0;
-            String lastPParam = "";
-            while ((line = br.readLine()) != null) {
-                lineNumber++;
+                            if(aUsed){
+                                content = runA(content);
+                            }
 
-                // Check if line should be skipped
-                boolean skipLine = false;
-                if (lineToSkip != null) {
-                    int parity = lineNumber % 2;
-                    if ((lineToSkip == LineParity.even && parity != 0) ||
-                            (lineToSkip == LineParity.odd && parity != 1)) {
-                        skipLine = true;
-                    }
-                }
-
-                // Check if line contains excludeString
-                boolean excludeLine = false;
-                if (excludeString != null && line.contains(excludeString)) {
-                    excludeLine = true;
-                    if (excludeLine == true){
-                        line = runX(excludeString, line);
-                    }
-                }
-
-                // Modify line according to settings
-                if (!skipLine && !excludeLine) {
-                    if (letterCase != null) {
-                        if (letterCase == Case.upper) {
-                            line = runC(Case.upper, line);
-                        } else if (letterCase == Case.lower) {
-                            line = runC(Case.upper, line);
+                            if(pUsed){
+                                content = runP(content, lastPParam);
+                            }
+                            if (xUsed && lastXParam.equals("")){
+                                content = "";
+                            }
+                            System.out.print(content);
                         }
                     }
-
-                    if (cipherText != 0) {
-                        line = shiftText(line, cipherText);
-                    }
-
-                    if (encodeLines) {
-                        line = encodeText(line);
-                    }
-
-                    if (prefix != null) {
-                        if (prefix.equals("")) {
-                            throw new TextilatorException("Usage: textilator [ -s number | -x substring | -c case | -e num | -a | -p prefix ] FILE");
-                        }
-                        line = runP(prefix, line);
-                    }
-
-                    if (line.startsWith("P:")) {
-                        lastPParam = line;
-                    }
-
-                    System.out.println(line);
+                } catch (IOException e) {
+                    throw new TextilatorException("Usage: textilator [ -s number | -x substring | -c case | -e num | -a | -p prefix ] FILE");
                 }
-            }
-        } catch (IOException e) {
-            throw new TextilatorException("Usage: textilator [ -s number | -x substring | -c case | -e num | -a | -p prefix ] FILE");
-        }
-    }
-
-    private String shiftText(String text, int shiftAmount) {
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < text.length(); i++) {
-            char ch = text.charAt(i);
-            if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
-                char base = Character.isUpperCase(ch) ? 'A' : 'a';
-                ch = (char) (base + (ch - base + shiftAmount + 26) % 26);
-            }
-            result.append(ch);
-        }
-        return result.toString();
-    }
-
-    private String encodeText(String text) {
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < text.length(); i++) {
-            char ch = text.charAt(i);
-            if ((int) ch >= 32 && (int) ch <= 126) {
-                result.append((int) ch);
-                result.append(' ');
             } else {
-                result.append(ch);
+                throw new TextilatorException("Usage: textilator [ -s number | -x substring | -c case | -e num | -a | -p prefix ] FILE");
             }
         }
-        return result.toString();
     }
 
-    private static String runP(String content, String lastPParam) {
-        String[] pLines = content.split(System.lineSeparator());
-        StringBuilder result = new StringBuilder();
-        for (String pLine : pLines) {
-            result.append(lastPParam).append(pLine).append(System.lineSeparator());
-        }
-        return result.toString();
-    }
 
     private static String runX(String content, String lastXParam){
         String[] xLines = content.split(System.lineSeparator());
@@ -207,6 +200,44 @@ public class Textilator implements TextilatorInterface {
                 }
             }
             result.append(ch);
+        }
+        return result.toString();
+    }
+
+    private static String runE(String content, String lastEParam) {
+        StringBuilder result = new StringBuilder();
+        int Enum = Integer.parseInt(lastEParam);
+        for (int i = 0; i < content.length(); i++) {
+            char ch = content.charAt(i);
+            if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+                char base = Character.isUpperCase(ch) ? 'A' : 'a';
+                ch = (char) (base + (ch - base + Enum + 26) % 26);
+            }
+            result.append(ch);
+        }
+        return result.toString();
+    }
+
+    private static String runA(String content) {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < content.length(); i++) {
+            char ch = content.charAt(i);
+            if ((int) ch >= 32 && (int) ch <= 126) {
+                result.append((int) ch);
+                result.append(' ');
+            }
+            else{
+                result.append(ch);
+            }
+        }
+        return result.toString();
+    }
+
+    private static String runP(String content, String lastPParam) {
+        String[] pLines = content.split(System.lineSeparator());
+        StringBuilder result = new StringBuilder();
+        for (String pLine : pLines) {
+            result.append(lastPParam).append(pLine).append(System.lineSeparator());
         }
         return result.toString();
     }

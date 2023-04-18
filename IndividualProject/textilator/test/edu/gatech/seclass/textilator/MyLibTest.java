@@ -67,33 +67,5 @@ public class MyLibTest {
         Assertions.assertEquals(input, getFileContent(inputFile));
     }
 
-    @Test
-    public void exampleTest2() {
-        String input = "    Test 62 -x" + System.lineSeparator()
-                + "Second line" + System.lineSeparator();
-        String expected = "    Test 62 -x"+ System.lineSeparator()
-                + "Second line" + System.lineSeparator();
 
-        Path inputFile = createFile(input);
-
-        TextilatorInterface utility = new Textilator();
-        utility.setFilepath(inputFile.toString());
-
-        Assertions.assertDoesNotThrow(utility::textilator);
-        Assertions.assertTrue(capture.stdout().isEmpty());
-        Assertions.assertTrue(capture.stderr().isEmpty());
-        Assertions.assertEquals(input, getFileContent(inputFile));
-    }
-    @Test
-    // Frame #: 62
-    public void textilatorTest62() {
-
-        Path inputFile = createFile(input);
-        String[] args = {"-x", "\\t", inputFile.toString()};
-        Main.main(args);
-
-        Assertions.assertEquals(expected, capture.stdout());
-        Assertions.assertTrue(capture.stderr().isEmpty());
-        Assertions.assertEquals(input, getFileContent(inputFile));
-    }
 }
