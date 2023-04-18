@@ -73,6 +73,7 @@ public class Textilator implements TextilatorInterface {
         try (BufferedReader br = new BufferedReader(new FileReader(filepath))) {
             String line;
             int lineNumber = 0;
+            String lastPParam = "";
             while ((line = br.readLine()) != null) {
                 lineNumber++;
 
@@ -90,15 +91,18 @@ public class Textilator implements TextilatorInterface {
                 boolean excludeLine = false;
                 if (excludeString != null && line.contains(excludeString)) {
                     excludeLine = true;
+                    if (excludeLine == true){
+                        line = runX(excludeString, line);
+                    }
                 }
 
                 // Modify line according to settings
                 if (!skipLine && !excludeLine) {
                     if (letterCase != null) {
                         if (letterCase == Case.upper) {
-                            line = line.toUpperCase();
+                            line = runC(Case.upper, line);
                         } else if (letterCase == Case.lower) {
-                            line = line.toLowerCase();
+                            line = runC(Case.upper, line);
                         }
                     }
 
@@ -111,7 +115,14 @@ public class Textilator implements TextilatorInterface {
                     }
 
                     if (prefix != null) {
-                        line = prefix + line;
+                        if (prefix.equals("")) {
+                            throw new TextilatorException("Prefix cannot be an empty string");
+                        }
+                        line = runP(prefix, line);
+                    }
+
+                    if (line.startsWith("P:")) {
+                        lastPParam = line;
                     }
 
                     System.out.println(line);
@@ -123,27 +134,80 @@ public class Textilator implements TextilatorInterface {
     }
 
     private String shiftText(String text, int shiftAmount) {
-        StringBuilder sb = new StringBuilder();
-        for (char c : text.toCharArray()) {
-            if (Character.isAlphabetic(c)) {
-                char base = Character.isUpperCase(c) ? 'A' : 'a';
-                int offset = (c - base + shiftAmount) % 26;
-                char shifted = (char) (base + offset);
-                sb.append(shifted);
-            } else {
-                sb.append(c);
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < text.length(); i++) {
+            char ch = text.charAt(i);
+            if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+                char base = Character.isUpperCase(ch) ? 'A' : 'a';
+                ch = (char) (base + (ch - base + shiftAmount + 26) % 26);
             }
+            result.append(ch);
         }
-        return sb.toString();
+        return result.toString();
     }
 
     private String encodeText(String text) {
-        StringBuilder sb = new StringBuilder();
-        for (char c : text.toCharArray()) {
-            int asciiValue = (int) c;
-            String hexValue = Integer.toHexString(asciiValue);
-            sb.append(hexValue);
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < text.length(); i++) {
+            char ch = text.charAt(i);
+            if ((int) ch >= 32 && (int) ch <= 126) {
+                result.append((int) ch);
+                result.append(' ');
+            } else {
+                result.append(ch);
+            }
         }
-        return sb.toString();
+        return result.toString();
+    }
+
+    private static String runP(String content, String lastPParam) {
+        String[] pLines = content.split(System.lineSeparator());
+        StringBuilder result = new StringBuilder();
+        for (String pLine : pLines) {
+            result.append(lastPParam).append(pLine).append(System.lineSeparator());
+        }
+        return result.toString();
+    }
+
+    private static String runX(String content, String lastXParam){
+        String[] xLines = content.split(System.lineSeparator());
+        StringBuilder result = new StringBuilder();
+        for (String xLine : xLines){
+            if (!xLine.contains(lastXParam)){
+                result.append(xLine).append(System.lineSeparator());
+            }
+        }
+
+        return result.toString();
+    }
+
+    private static String runS(String content, String lastSParam) {
+        String[] sLines = content.split(System.lineSeparator());
+        StringBuilder result = new StringBuilder();
+        int Snum = Integer.parseInt(lastSParam);
+        for (int i = 0; i < sLines.length; i++) {
+            if ((i % 2 != 0 && Snum == 0) || (i % 2 == 0 && Snum == 1)) {
+                continue;
+            }
+            result.append(sLines[i]).append(System.lineSeparator());
+        }
+        return result.toString();
+    }
+
+    private static String runC(String content, String lastCParam){
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < content.length(); i++) {
+            char ch = content.charAt(i);
+            if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+                if (lastCParam.equals("upper")){
+                    ch = Character.toUpperCase(ch);
+                }
+                if (lastCParam.equals("lower")){
+                    ch = Character.toLowerCase(ch);
+                }
+            }
+            result.append(ch);
+        }
+        return result.toString();
     }
 }

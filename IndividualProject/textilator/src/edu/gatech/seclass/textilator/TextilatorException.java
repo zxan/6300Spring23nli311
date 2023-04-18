@@ -11,6 +11,7 @@ public class TextilatorException extends Exception {
       * @param s the error message
       */
     TextilatorException(String s) {
-        super(s);
+
+        super("Usage: textilator [ -s number | -x substring | -c case | -e num | -a | -p prefix ] FILE\n" + s);
     }
 }
