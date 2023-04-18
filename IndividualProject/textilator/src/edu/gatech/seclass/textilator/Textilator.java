@@ -67,7 +67,7 @@ public class Textilator implements TextilatorInterface {
     public void textilator() throws TextilatorException {
         // Check that the filepath has been set
         if (filepath == null) {
-            throw new TextilatorException("Filepath not set");
+            throw new TextilatorException("Usage: textilator [ -s number | -x substring | -c case | -e num | -a | -p prefix ] FILE");
         }
 
         try (BufferedReader br = new BufferedReader(new FileReader(filepath))) {
@@ -116,7 +116,7 @@ public class Textilator implements TextilatorInterface {
 
                     if (prefix != null) {
                         if (prefix.equals("")) {
-                            throw new TextilatorException("Prefix cannot be an empty string");
+                            throw new TextilatorException("Usage: textilator [ -s number | -x substring | -c case | -e num | -a | -p prefix ] FILE");
                         }
                         line = runP(prefix, line);
                     }
@@ -129,7 +129,7 @@ public class Textilator implements TextilatorInterface {
                 }
             }
         } catch (IOException e) {
-            throw new TextilatorException(e.getMessage());
+            throw new TextilatorException("Usage: textilator [ -s number | -x substring | -c case | -e num | -a | -p prefix ] FILE");
         }
     }
 
