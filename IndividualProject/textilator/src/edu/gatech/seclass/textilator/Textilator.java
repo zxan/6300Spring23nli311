@@ -14,7 +14,7 @@ public class Textilator implements TextilatorInterface {
     private LineParity lineToSkip;
     private String excludeString;
     private Case letterCase;
-    private int cipherText;
+    private int shiftAmount;
     private boolean encodeLines;
     private String prefix;
     boolean aUsed = false;
@@ -40,7 +40,7 @@ public class Textilator implements TextilatorInterface {
         lineToSkip = null;
         excludeString = null;
         letterCase = null;
-        cipherText = 0;
+        shiftAmount = 0;
         encodeLines = false;
         prefix = null;
         error = false;
