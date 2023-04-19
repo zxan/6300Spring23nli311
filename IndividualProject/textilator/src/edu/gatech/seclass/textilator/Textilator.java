@@ -131,9 +131,9 @@ public class Textilator implements TextilatorInterface {
                             }
                             if(sUsed){
                                 if (lastSParam.equals("even")) {
-                                    lastSParam = "1";
-                                } else if (lastSParam.equals("odd")) {
                                     lastSParam = "0";
+                                } else if (lastSParam.equals("odd")) {
+                                    lastSParam = "1";
                                 } else {
                                     throw new TextilatorException("Usage: textilator [ -s number | -x substring | -c case | -e num | -a | -p prefix ] FILE");
                                 }
