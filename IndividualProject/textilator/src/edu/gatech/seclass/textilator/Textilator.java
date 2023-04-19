@@ -130,6 +130,13 @@ public class Textilator implements TextilatorInterface {
                                 content = runX(content, lastXParam);
                             }
                             if(sUsed){
+                                if (lastSParam.equals("even")) {
+                                    lastSParam = "1";
+                                } else if (lastSParam.equals("odd")) {
+                                    lastSParam = "0";
+                                } else {
+                                    throw new TextilatorException("Usage: textilator [ -s number | -x substring | -c case | -e num | -a | -p prefix ] FILE");
+                                }
                                 content = runS(content, lastSParam);
                             }
                             if(cUsed){
