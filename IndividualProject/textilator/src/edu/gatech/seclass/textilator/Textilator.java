@@ -118,7 +118,7 @@ public class Textilator implements TextilatorInterface {
                             //System.out.println("Error X and S used");
                             error = true;
                         }
-                        if (aUsed && eUsed){
+                        if (this.encodeLines && eUsed){
                             //System.out.println("Error A and E used");
                             error = true;
                         }
@@ -146,7 +146,7 @@ public class Textilator implements TextilatorInterface {
                                 content = runE(content, lastEParam);
                             }
 
-                            if(aUsed && this.encodeLines){
+                            if(this.encodeLines){
                                 content = runA(content);
                             }
 
