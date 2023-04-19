@@ -87,7 +87,7 @@ public class Textilator implements TextilatorInterface {
     public void setCipherText(int shiftAmount) {
         //E
         eUsed = true;
-        this.shiftAmount = shiftAmount;
+        lastEParam = Integer.toString(shiftAmount);
     }
 
     @Override
@@ -131,28 +131,19 @@ public class Textilator implements TextilatorInterface {
                             }
                             if(sUsed){
                                 if (lastSParam.equals("even")) {
-                                    lastSParam = "1";
-                                } else if (lastSParam.equals("odd")) {
                                     lastSParam = "0";
+                                } else if (lastSParam.equals("odd")) {
+                                    lastSParam = "1";
                                 } else {
                                     throw new TextilatorException("Usage: textilator [ -s number | -x substring | -c case | -e num | -a | -p prefix ] FILE");
                                 }
                                 content = runS(content, lastSParam);
                             }
                             if(cUsed){
-                                if (!lastCParam.equals("upper") || !lastCParam.equals("lower")){
-                                    throw new TextilatorException("Usage: textilator [ -s number | -x substring | -c case | -e num | -a | -p prefix ] FILE");
-                                } else{
-                                    content = runC(content, lastCParam);
-                                }
+                                content = runC(content, lastCParam);
                             }
                             if(eUsed){
-                                if (shiftAmount >= -25 && shiftAmount <= 25) {
-                                    lastEParam = Integer.toString(shiftAmount);
-                                    content = runE(content, lastEParam);
-                                } else {
-                                    throw new TextilatorException("Usage: textilator [ -s number | -x substring | -c case | -e num | -a | -p prefix ] FILE");
-                                }
+                                content = runE(content, lastEParam);
                             }
 
                             if(this.encodeLines){
@@ -211,7 +202,7 @@ public class Textilator implements TextilatorInterface {
                 if (lastCParam.equals("upper")){
                     ch = Character.toUpperCase(ch);
                 }
-                else if (lastCParam.equals("lower")){
+                if (lastCParam.equals("lower")){
                     ch = Character.toLowerCase(ch);
                 }
             }
