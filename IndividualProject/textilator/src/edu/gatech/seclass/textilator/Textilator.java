@@ -146,7 +146,7 @@ public class Textilator implements TextilatorInterface {
                                 content = runE(content, lastEParam);
                             }
 
-                            if(aUsed){
+                            if(aUsed && this.encodeLines){
                                 content = runA(content);
                             }
 
