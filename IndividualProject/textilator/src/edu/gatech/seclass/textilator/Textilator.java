@@ -87,7 +87,7 @@ public class Textilator implements TextilatorInterface {
     public void setCipherText(int shiftAmount) {
         //E
         eUsed = true;
-        lastEParam = Integer.toString(shiftAmount);
+        this.shiftAmount = shiftAmount;
     }
 
     @Override
@@ -140,10 +140,19 @@ public class Textilator implements TextilatorInterface {
                                 content = runS(content, lastSParam);
                             }
                             if(cUsed){
-                                content = runC(content, lastCParam);
+                                if (!lastCParam.equals("upper") || !lastCParam.equals("lower")){
+                                    throw new TextilatorException("Usage: textilator [ -s number | -x substring | -c case | -e num | -a | -p prefix ] FILE");
+                                } else{
+                                    content = runC(content, lastCParam);
+                                }
                             }
                             if(eUsed){
-                                content = runE(content, lastEParam);
+                                if (shiftAmount >= -25 && shiftAmount <= 25) {
+                                    lastEParam = Integer.toString(shiftAmount);
+                                    content = runE(content, lastEParam);
+                                } else {
+                                    throw new TextilatorException("Usage: textilator [ -s number | -x substring | -c case | -e num | -a | -p prefix ] FILE");
+                                }
                             }
 
                             if(this.encodeLines){
@@ -202,7 +211,7 @@ public class Textilator implements TextilatorInterface {
                 if (lastCParam.equals("upper")){
                     ch = Character.toUpperCase(ch);
                 }
-                if (lastCParam.equals("lower")){
+                else if (lastCParam.equals("lower")){
                     ch = Character.toLowerCase(ch);
                 }
             }
